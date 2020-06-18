@@ -1,5 +1,14 @@
 import { AppProps } from "next/app";
 import Head from "next/head";
+import { ThemeProvider } from 'styled-components'
+
+
+const theme = {
+  colors: {
+    primary: '#0070f3',
+  },
+}
+
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -14,8 +23,10 @@ function App({ Component, pageProps }: AppProps) {
         <title>Jonatan Lins</title>
       </Head>
 
-      <Component {...pageProps} />
-
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
+      
       <style jsx global>{`
         body {
           margin: 0;
