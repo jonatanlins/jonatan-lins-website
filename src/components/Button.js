@@ -20,6 +20,8 @@ const Button = styled.button`
   padding: 7px;
   cursor: pointer;
   font-size: 1em;
+  margin: 8px 0;
+  font-family: inherit;
 
   &::before,
   &::after {

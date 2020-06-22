@@ -1,35 +1,42 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const H1 = styled.h1`
-  color: white;
-  font-size: 7.5em;
-  margin: 0.5em 0;
-  text-transform: uppercase;
-  font-family: "Tungsten Bold", arial, georgia, sans-serif;
+  font-size: 105px;
+  margin: 0;
+  line-height: 1.618;
+  font-family: Valorant, serif, arial, georgia, sans-serif;
   font-weight: 400;
 `;
 
 export const H2 = styled.h2`
-  color: white;
+  font-size: 20px;
+  margin: 16px 0 0;
+  line-height: 1.618;
+  font-family: Valorant, serif, arial, georgia, sans-serif;
+  font-weight: 400;
 `;
 
 export const H3 = styled.h3`
-  color: #0f1923;
-  font-size: 7.5em;
-  margin: 0.5em 0;
+  font-size: 140px;
+  margin: 35px 0;
+  line-height: 1.618;
   text-transform: uppercase;
-  font-family: "Tungsten Bold", arial, georgia, sans-serif;
+  font-family: Tungsten-Bold, serif, arial, georgia, sans-serif;
   font-weight: 400;
 `;
 
 export const H4 = styled.h4`
-  color: #0f1923;
+  line-height: 1.618;
 `;
 
 export const H5 = styled.h5`
-  color: #0f1923;
+  line-height: 1.618;
 `;
 
 export const H6 = styled.h6`
-  color: #0f1923;
+  line-height: 1.618;
+`;
+
+export const P = styled.p`
+  line-height: 1.618;
 `;

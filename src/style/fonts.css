@@ -1,0 +1,33 @@
+@font-face {
+  font-family: DINNextW05-Bold;
+  src: url(/fonts/f855f545-9ff1-433c-912f-c58bd2d71d28-1f82e924ebeebbbbaadc09a502297b1e.woff2)
+      format("woff2"),
+    url(/fonts/8a078fb7-2865-4534-a436-3c2a87c69d57-d244bc858f1c78fe41c9f7f3524f2fe2.woff)
+      format("woff");
+}
+
+/* @font-face {
+  font-family: DINNextW05-Medium;
+  src: url(/fonts/a077222b-f869-4748-8eda-79372b7c40a1-6841fd87b89e724e972a6dc7b882820f.woff2)
+      format("woff2"),
+    url(/fonts/0297a959-5296-4f45-9729-78daf65d9e43-e4ffb1044fec1b1711204e4998e6081f.woff)
+      format("woff");
+} */
+
+/* @font-face {
+  font-family: DINNextW1G;
+  src: url(/fonts/DINNextW1G-a55c0688d765a6f6a92f8b06dbd29822.woff2)
+      format("woff2"),
+    url(/fonts/DINNextW1G-338069545c7937c23393be7b6d09b003.woff) format("woff");
+} */
+
+@font-face {
+  font-family: Tungsten-Bold;
+  src: url(/fonts/Tungsten-Bold_Web.woff2) format("woff2"),
+    url(/fonts/Tungsten-Bold_Web.woff) format("woff");
+}
+
+@font-face {
+  font-family: Valorant;
+  src: url(/fonts/Valorant-Font.ttf) format("truetype");
+}
