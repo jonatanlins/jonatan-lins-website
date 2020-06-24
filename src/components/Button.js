@@ -22,9 +22,10 @@ const Button = styled.button`
   font-size: 1em;
   margin: 8px 0;
   font-family: inherit;
+  outline: none;
 
-  &::before,
-  &::after {
+  &:before,
+  &:after {
     content: "";
     position: absolute;
     border: 1px solid #ece8e1;
@@ -32,14 +33,15 @@ const Button = styled.button`
     box-sizing: border-box;
     left: 0;
     right: 0;
+    transition: all 0.2s linear;
   }
 
-  &::before {
+  &:before {
     top: 0;
     border-bottom: none;
   }
 
-  &::after {
+  &:after {
     bottom: 0;
     border-top: none;
   }
@@ -48,24 +50,21 @@ const Button = styled.button`
     & > div {
       color: #ece8e1;
 
-      &::before {
+      &:before {
         left: -10%;
       }
 
-      &::after {
+      &:after {
         background-color: #ece8e1;
       }
     }
   }
 
-  &.primary {
-    & > div {
-      background-color: #ff4655;
-      color: #ece8e1;
-
-      &::before {
-        background-color: #0f1923;
-      }
+  &:focus {
+    &:before,
+    &:after {
+      padding: 3px;
+      margin: -3px;
     }
   }
 `;
@@ -84,7 +83,7 @@ const OutterContainer = styled.div`
   overflow: hidden;
   transition: color 0.3s ease;
 
-  &::before {
+  &:before {
     content: "";
     position: absolute;
     height: 100%;
@@ -97,7 +96,7 @@ const OutterContainer = styled.div`
     transition: left 0.3s ease;
   }
 
-  &::after {
+  &:after {
     content: "";
     position: absolute;
     width: 4px;
@@ -107,10 +106,20 @@ const OutterContainer = styled.div`
     background-color: #0f1923;
     transition: background-color 0.3s ease;
   }
+
+  button.primary & {
+    background-color: #ff4655;
+    color: #ece8e1;
+
+    &:before {
+      background-color: #0f1923;
+    }
+  }
 `;
 
 const InnerContainer = styled.div`
   z-index: 1;
+  user-select: none;
 `;
 
 export default Component;

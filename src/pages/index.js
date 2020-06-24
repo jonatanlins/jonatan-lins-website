@@ -1,17 +1,27 @@
 import styled from "styled-components";
+import { FiHeart, FiPhone, FiInstagram, FiMail } from "react-icons/fi";
+import { useFormState } from "react-use-form-state";
 
 import Button from "../components/Button";
 import Card from "../components/Card";
 import TextInput from "../components/TextInput";
-import { H1, H2, H3, P } from "../components/Typography";
+import { P, H1, H2, H3, H4 } from "../components/Typography";
 
 function Home() {
+  const [formState, { text, email }] = useFormState();
+
+  function handleContactSubmit(event) {
+    event.preventDefault();
+
+    console.log(formState.values);
+  }
+
   return (
     <div className="container">
       <PageHeader />
 
       <FirstSection>
-        <img src="/images/avatar.jpg" alt="" className="avatar" />
+        <img src="/images/avatar-wo-bg.png" alt="" className="avatar" />
 
         <H2 light>Desenvolvedor de sites e Aplicativos</H2>
         <H1 light>Jonatan Lins</H1>
@@ -23,38 +33,30 @@ function Home() {
         <H3>Entre em contato</H3>
 
         <Card>
-          <form>
-            <a href="tel:+5581982224966">(81) 982224966</a>
-            <a href="mailto:jonatanpinheiro99@gmail.com">
-              jonatanpinheiro99@gmail.com
-            </a>
+          <form onSubmit={handleContactSubmit}>
+            <H4 light>Escreva uma mensagem</H4>
 
-            <TextInput />
+            <TextInput label="Seu nome" {...text("name")} />
+            <TextInput label="Seu email" {...email("email")} />
+            <TextInput label="Assunto da conversa" {...text("subject")} />
+            <TextInput label="Sua mensagem" {...text("content")} multiline />
 
             <Button>Entre em contato</Button>
+
+            {/* <a href="tel:+5581982224966">(81) 982224966</a>
+            <a href="mailto:jonatanpinheiro99@gmail.com">
+              jonatanpinheiro99@gmail.com
+            </a> */}
           </form>
         </Card>
       </ContactSection>
 
       <PageFooter>
         <P light>
-          Feito com amor por{" "}
-          <a href="https://jonatanlins.github.io/">Jonatan Lins</a>
+          Feito com <FiHeart style={{ marginBottom: -3 }} /> por{" "}
+          <a href="https://www.instagram.com/jonatan.lins">Jonatan Lins</a>
         </P>
       </PageFooter>
-
-      <style jsx>{`
-        a {
-          color: inherit;
-          text-decoration: none;
-          font-weight: 500;
-          transition: all 0.2s ease;
-        }
-
-        a:hover {
-          opacity: 0.7;
-        }
-      `}</style>
     </div>
   );
 }
@@ -69,24 +71,25 @@ const PageHeader = styled.header`
 `;
 
 const Section = styled.section`
-  min-height: calc(100vh - 80px);
   padding: 11em;
   box-sizing: border-box;
+  position: relative;
 `;
 
 const FirstSection = styled(Section)`
-  color: #ece8e1;
   background-color: #111;
   margin: 5em auto 0;
   display: flex;
+  padding: 6em;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
   .avatar {
-    width: 256px;
-    height: 256px;
-    border-radius: 999px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
   }
 `;
 
@@ -97,7 +100,6 @@ const ContactSection = styled(Section)`
 const PageFooter = styled.footer`
   background-color: #111;
   text-align: center;
-  color: #ece8e1;
   padding: 4em 0;
 `;
 
