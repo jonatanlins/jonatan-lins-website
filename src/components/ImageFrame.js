@@ -15,6 +15,8 @@ const Container = styled.div`
   box-sizing: border-box;
   background: url(${(props) => props.image}) center no-repeat;
   background-size: cover;
+  max-width: 100%;
+  user-select: none;
 
   &:before {
     content: "";
@@ -38,6 +40,8 @@ const Container = styled.div`
   }
 `;
 
-const Image = styled.img``;
+const Image = styled.img`
+  max-width: 100%;
+`;
 
 export default Component;

@@ -26,7 +26,7 @@ function Home() {
     <div className="container">
       <PageHeader />
 
-      <FirstSection>
+      <FirstSection background="accent">
         {/* <img src="/images/misc/avatar-wo-bg.png" alt="" className="avatar" /> */}
 
         <H2 light>Desenvolvedor de sites e Aplicativos</H2>
@@ -35,17 +35,73 @@ function Home() {
         <Button primary>Entre em contato</Button>
       </FirstSection>
 
-      <Section>
+      <Section background="contrast">
         <H3>Sobre mim</H3>
+        <H4>Algum subtítulo qualquer</H4>
+        <P>
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum.
+        </P>
+        <P>
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum.
+        </P>
       </Section>
 
       <Section background="secondary">
         <H3>Meus projetos</H3>
 
-        <ImageFrame src="https://via.placeholder.com/400x400/ff4655/ece8e1" />
+        <Row>
+          <div>
+            <ImageFrame src="https://via.placeholder.com/400x400/ff4655/ece8e1" />
+          </div>
+
+          <div>
+            <H4>Projeto 1</H4>
+            <P>
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a more-or-less normal.
+            </P>
+
+            <Button>Veja mais</Button>
+          </div>
+
+          <div>
+            <ImageFrame src="https://via.placeholder.com/400x400/ff4655/ece8e1" />
+          </div>
+
+          <div>
+            <H4>Projeto 2</H4>
+            <P>
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a more-or-less normal.
+            </P>
+
+            <Button>Veja mais</Button>
+          </div>
+
+          <div>
+            <ImageFrame src="https://via.placeholder.com/400x400/ff4655/ece8e1" />
+          </div>
+
+          <div>
+            <H4>Projeto 3</H4>
+            <P>
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a more-or-less normal.
+            </P>
+
+            <Button>Veja mais</Button>
+          </div>
+        </Row>
       </Section>
 
-      <Section>
+      <Section background="contrast">
         <H3>Entre em contato</H3>
 
         <Card>
@@ -81,6 +137,21 @@ function Home() {
     </div>
   );
 }
+
+const Row = styled.div`
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 2em 1em;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 300px auto;
+    grid-gap: 3em 1.5em;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 370px auto;
+  }
+`;
 
 const FirstSection = styled(Section)`
   background-color: ${(props) => props.theme.colors.accent};

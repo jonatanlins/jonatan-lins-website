@@ -14,7 +14,7 @@ const textMixin = css`
 
 export const H1 = styled.h1`
   ${textMixin}
-  font-family: Valorant, sans-serif;
+  font-family: Valorant, arial, georgia, sans-serif;
   font-size: 4em;
 
   @media (min-width: 768px) {
@@ -28,7 +28,7 @@ export const H1 = styled.h1`
 
 export const H2 = styled.h2`
   ${textMixin}
-  font-family: Valorant, sans-serif;
+  font-family: Valorant, arial, georgia, sans-serif;
   font-size: 1.125em;
 
   @media (min-width: 1024px) {
@@ -38,7 +38,7 @@ export const H2 = styled.h2`
 
 export const H3 = styled.h3`
   ${textMixin}
-  font-family: Tungsten-Bold, sans-serif;
+  font-family: Tungsten-Bold, arial, georgia, sans-serif;
   font-size: 3.5em;
   text-transform: uppercase;
 
@@ -53,7 +53,7 @@ export const H3 = styled.h3`
 
 export const H4 = styled.h4`
   ${textMixin}
-  font-family: DINNextW05-Medium, sans-serif;
+  font-family: DINNextW05-Medium, arial, georgia, sans-serif;
   font-size: 1.25em;
 `;
 
@@ -67,11 +67,12 @@ export const H6 = styled.h6`
 
 export const P = styled.p`
   ${textMixin}
-  font-family: DINNextW1G, sans-serif;
-  font-size: 1em;
+  font-family: DINNextW1G, arial, georgia, sans-serif;
+  font-size: 1.25em;
+  margin: 1em 0;
 
   a {
-    font-family: DINNextW05-Medium, sans-serif;
+    font-family: DINNextW05-Medium, arial, georgia, sans-serif;
     color: inherit;
     text-decoration: none;
     transition: all 0.2s ease;
