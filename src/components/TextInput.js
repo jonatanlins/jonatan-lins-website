@@ -30,7 +30,7 @@ const Container = styled.label`
   &:after {
     content: "";
     position: absolute;
-    border: 1px solid #ece8e1;
+    border: 1px solid ${(props) => props.theme.colors.contrast};
     height: 30px;
     box-sizing: border-box;
     left: 0;
@@ -55,7 +55,7 @@ const Label = styled.span`
   left: 23px;
   font-size: 1em;
   top: 23px;
-  color: #0f1923;
+  color: ${(props) => props.theme.colors.primary};
   transition: all 0.2s ease;
 
   label.active & {
@@ -75,8 +75,8 @@ const inputMixin = css`
   outline: none;
   padding: 16px 1em 19px;
   box-sizing: border-box;
-  background-color: #ece8e1;
-  color: #0f1923;
+  background-color: ${(props) => props.theme.colors.contrast};
+  color: ${(props) => props.theme.colors.primary};
   transition: all 0.2s ease;
   display: block;
 

@@ -28,7 +28,7 @@ const Button = styled.button`
   &:after {
     content: "";
     position: absolute;
-    border: 1px solid #ece8e1;
+    border: 1px solid ${(props) => props.theme.colors.contrast};
     height: 30px;
     box-sizing: border-box;
     left: 0;
@@ -48,14 +48,14 @@ const Button = styled.button`
 
   &:hover {
     & > div {
-      color: #ece8e1;
+      color: ${(props) => props.theme.colors.contrast};
 
       &:before {
         left: -10%;
       }
 
       &:after {
-        background-color: #ece8e1;
+        background-color: ${(props) => props.theme.colors.contrast};
       }
     }
   }
@@ -70,8 +70,8 @@ const Button = styled.button`
 `;
 
 const OutterContainer = styled.div`
-  background-color: #ece8e1;
-  color: #0f1923;
+  background-color: ${(props) => props.theme.colors.contrast};
+  color: ${(props) => props.theme.colors.primary};
   height: 100%;
   text-transform: uppercase;
   vertical-align: center;
@@ -90,7 +90,7 @@ const OutterContainer = styled.div`
     width: 100px;
     background-color: red;
     transform: skew(-10deg);
-    background-color: #0f1923;
+    background-color: ${(props) => props.theme.colors.primary};
     width: 120%;
     left: -130%;
     transition: left 0.3s ease;
@@ -103,16 +103,16 @@ const OutterContainer = styled.div`
     height: 4px;
     bottom: 0;
     right: 0;
-    background-color: #0f1923;
+    background-color: ${(props) => props.theme.colors.primary};
     transition: background-color 0.3s ease;
   }
 
   button.primary & {
-    background-color: #ff4655;
-    color: #ece8e1;
+    background-color: ${(props) => props.theme.colors.secondary};
+    color: ${(props) => props.theme.colors.contrast};
 
     &:before {
-      background-color: #0f1923;
+      background-color: ${(props) => props.theme.colors.primary};
     }
   }
 `;

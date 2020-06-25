@@ -2,38 +2,59 @@ import styled, { css } from "styled-components";
 
 const textMixin = css`
   color: ${(props) =>
-    props.light ? "#ece8e1" : props.dark ? "#0f1923" : "inherit"};
+    props.light
+      ? props.theme.colors.contrast
+      : props.dark
+      ? props.theme.colors.primary
+      : "inherit"};
   line-height: 1.618;
   font-weight: 400;
+  margin: 0;
 `;
 
 export const H1 = styled.h1`
   ${textMixin}
   font-family: Valorant, sans-serif;
-  font-size: 8em;
-  margin: 0;
+  font-size: 4em;
+
+  @media (min-width: 768px) {
+    font-size: 5em;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 7em;
+  }
 `;
 
 export const H2 = styled.h2`
   ${textMixin}
   font-family: Valorant, sans-serif;
-  font-size: 1.25em;
-  margin: 0.8em 0 0;
+  font-size: 1.125em;
+
+  @media (min-width: 1024px) {
+    font-size: 1.25em;
+  }
 `;
 
 export const H3 = styled.h3`
   ${textMixin}
   font-family: Tungsten-Bold, sans-serif;
-  font-size: 8.75em;
-  margin: 0.25em 0;
+  font-size: 3.5em;
   text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    font-size: 6.25em;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 7.5em;
+  }
 `;
 
 export const H4 = styled.h4`
   ${textMixin}
   font-family: DINNextW05-Medium, sans-serif;
   font-size: 1.25em;
-  margin: 1.2em 0;
 `;
 
 export const H5 = styled.h5`

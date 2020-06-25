@@ -1,14 +1,9 @@
 import { AppProps } from "next/app";
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
-import "../style/global.css";
+import theme from "../style/theme";
+import GlobalStyle from "../style/GlobalStyle";
 import "../style/fonts.css";
-
-const theme = {
-  colors: {
-    primary: "#0070f3",
-  },
-};
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -20,6 +15,7 @@ function App({ Component, pageProps }: AppProps) {
 
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
+        <GlobalStyle />
       </ThemeProvider>
     </>
   );

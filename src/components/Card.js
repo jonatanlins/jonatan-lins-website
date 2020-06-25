@@ -13,14 +13,15 @@ function Component({ children }) {
 }
 
 const Container = styled.div`
-  background-color: #0f1923;
+  background-color: ${(props) => props.theme.colors.primary};
   position: relative;
-  padding: 0.5em 2.5em 1.5em;
+  padding: 1.5em 2.5em 1.5em;
+  margin: 10px 0;
   box-sizing: border-box;
 `;
 
 const TopBorder = styled.div`
-  background-color: #0f1923;
+  background-color: ${(props) => props.theme.colors.primary};
   width: calc(100% - 10px);
   height: 10px;
   position: absolute;
@@ -29,7 +30,7 @@ const TopBorder = styled.div`
 
   &:before {
     content: "";
-    border-bottom: 10px solid #0f1923;
+    border-bottom: 10px solid ${(props) => props.theme.colors.primary};
     border-left: 10px solid transparent;
     position: absolute;
     left: -10px;
@@ -38,7 +39,7 @@ const TopBorder = styled.div`
   &:after {
     content: "";
     position: absolute;
-    background-color: #ece8e1;
+    background-color: ${(props) => props.theme.colors.contrast};
     width: 60px;
     height: 1px;
     left: calc(50% - 35px);
@@ -47,7 +48,7 @@ const TopBorder = styled.div`
 `;
 
 const BottomBorder = styled.div`
-  background-color: #0f1923;
+  background-color: ${(props) => props.theme.colors.primary};
   width: calc(100% - 10px);
   height: 10px;
   position: absolute;
@@ -56,7 +57,7 @@ const BottomBorder = styled.div`
 
   &:before {
     content: "";
-    border-top: 10px solid #0f1923;
+    border-top: 10px solid ${(props) => props.theme.colors.primary};
     border-right: 10px solid transparent;
     position: absolute;
     right: -10px;
@@ -65,7 +66,7 @@ const BottomBorder = styled.div`
   &:after {
     content: "";
     position: absolute;
-    background-color: #ece8e1;
+    background-color: ${(props) => props.theme.colors.contrast};
     width: 60px;
     height: 1px;
     right: calc(50% - 35px);
