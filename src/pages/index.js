@@ -6,7 +6,9 @@ import Button from "../components/Button";
 import Card from "../components/Card";
 import TextInput from "../components/TextInput";
 import Section from "../components/Section";
-import PictureFrame from "../components/PictureFrame";
+import ImageFrame from "../components/ImageFrame";
+import PageHeader from "../components/PageHeader";
+import PageFooter from "../components/PageFooter";
 import { P, H1, H2, H3, H4 } from "../components/Typography";
 
 function Home() {
@@ -14,6 +16,8 @@ function Home() {
 
   function handleContactSubmit(event) {
     event.preventDefault();
+
+    alert("Esse formulário ainda não funciona :(");
 
     console.log(formState.values);
   }
@@ -38,11 +42,7 @@ function Home() {
       <Section background="secondary">
         <H3>Meus projetos</H3>
 
-        <PictureFrame
-          src="https://via.placeholder.com/400x400/ff4655/ece8e1"
-          width={300}
-          height={300}
-        />
+        <ImageFrame src="https://via.placeholder.com/400x400/ff4655/ece8e1" />
       </Section>
 
       <Section>
@@ -69,7 +69,7 @@ function Home() {
 
       <PageFooter>
         <P light>
-          Feito com <FiHeart style={{ marginBottom: -3 }} /> por{" "}
+          Feito com <FiHeart style={{ marginBottom: -3 }} title="amor" /> por{" "}
           <a href="https://www.instagram.com/jonatan.lins">Jonatan Lins</a>
         </P>
 
@@ -81,16 +81,6 @@ function Home() {
     </div>
   );
 }
-
-const PageHeader = styled.header`
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  height: 5em;
-  background-color: ${(props) => props.theme.colors.accent};
-  z-index: 100;
-`;
 
 const FirstSection = styled(Section)`
   background-color: ${(props) => props.theme.colors.accent};
@@ -107,12 +97,6 @@ const FirstSection = styled(Section)`
     right: 0;
     max-height: 100%;
   }
-`;
-
-const PageFooter = styled.footer`
-  background-color: ${(props) => props.theme.colors.accent};
-  text-align: center;
-  padding: 4em 0;
 `;
 
 export default Home;
