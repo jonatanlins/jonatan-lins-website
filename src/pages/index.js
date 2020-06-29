@@ -22,19 +22,31 @@ function Home() {
     console.log(formState.values);
   }
 
+  function goToContactSection() {
+    window.open("#contact", "_self");
+  }
+
   return (
-    <div className="container">
-      <PageHeader />
+    <Container>
+      <PageHeader
+        links={[
+          { label: "Home", url: "" },
+          { label: "Sobre", url: "#about" },
+          { label: "Projetos", url: "#projects" },
+          { label: "Contato", url: "#contact" },
+        ]}
+      />
 
       <FirstSection background="accent">
-        {/* <img src="/images/misc/avatar-wo-bg.png" alt="" className="avatar" /> */}
-
         <H2 light>Desenvolvedor de sites e Aplicativos</H2>
         <H1 light>Jonatan Lins</H1>
 
-        <Button primary>Entre em contato</Button>
+        <Button primary onClick={goToContactSection}>
+          Entre em contato
+        </Button>
       </FirstSection>
 
+      <a name="about" />
       <Section background="contrast">
         <H3>Sobre mim</H3>
         <H4>Algum subtítulo qualquer</H4>
@@ -50,6 +62,7 @@ function Home() {
         </P>
       </Section>
 
+      <a name="projects" />
       <Section background="secondary">
         <H3>Meus projetos</H3>
 
@@ -101,6 +114,7 @@ function Home() {
         </Row>
       </Section>
 
+      <a name="contact" />
       <Section background="contrast">
         <H3>Entre em contato</H3>
 
@@ -130,13 +144,22 @@ function Home() {
         </P>
 
         <P light>
-          Inspirado no site do{" "}
+          Inspirado no site do&nbsp;
           <a href="https://playvalorant.com/pt-br">Valorant</a>
+          <br />
+          Este site é open source, acesse o código&nbsp;
+          <a href="https://github.com/jonatanlins/jonatan-lins-website">
+            clicando aqui
+          </a>
         </P>
       </PageFooter>
-    </div>
+    </Container>
   );
 }
+
+const Container = styled.div`
+  margin-top: 5em;
+`;
 
 const Row = styled.div`
   display: grid;
@@ -154,20 +177,10 @@ const Row = styled.div`
 `;
 
 const FirstSection = styled(Section)`
-  background-color: ${(props) => props.theme.colors.accent};
-  margin: 5em auto 0;
-  display: flex;
   padding: 8em 0 !important;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
-  .avatar {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    max-height: 100%;
-  }
 `;
 
 export default Home;

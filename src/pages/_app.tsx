@@ -9,7 +9,6 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <link rel="stylesheet" href="style.css" />
         <title>Jonatan Lins</title>
       </Head>
 
