@@ -81,4 +81,8 @@ export const P = styled.p`
       opacity: 0.6;
     }
   }
+
+  svg {
+    margin-bottom: -3px;
+  }
 `;

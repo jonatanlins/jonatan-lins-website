@@ -1,8 +1,11 @@
-import styled from "styled-components";
-import { FiHeart, FiPhone, FiInstagram, FiMail } from "react-icons/fi";
+import styled, { withTheme } from "styled-components";
+import { FiChevronsUp, FiPhone, FiInstagram, FiMail } from "react-icons/fi";
+import { FaHeart } from "react-icons/fa";
 import { useFormState } from "react-use-form-state";
+import Link from "next/link";
 
 import Button from "../components/Button";
+import IconButton from "../components/IconButton";
 import Card from "../components/Card";
 import TextInput from "../components/TextInput";
 import Section from "../components/Section";
@@ -11,7 +14,7 @@ import PageHeader from "../components/PageHeader";
 import PageFooter from "../components/PageFooter";
 import { P, H1, H2, H3, H4 } from "../components/Typography";
 
-function Home() {
+function Home({ theme }) {
   const [formState, { text, email }] = useFormState();
 
   function handleContactSubmit(event) {
@@ -139,7 +142,7 @@ function Home() {
 
       <PageFooter>
         <P light>
-          Feito com <FiHeart style={{ marginBottom: -3 }} title="amor" /> por{" "}
+          Feito com <FaHeart title="amor" color={theme.colors.secondary} /> por{" "}
           <a href="https://www.instagram.com/jonatan.lins">Jonatan Lins</a>
         </P>
 
@@ -153,9 +156,23 @@ function Home() {
           </a>
         </P>
       </PageFooter>
+
+      <ScrollToTopButton>
+        <Link href="">
+          <a>
+            <IconButton icon={FiChevronsUp} />
+          </a>
+        </Link>
+      </ScrollToTopButton>
     </Container>
   );
 }
+
+const ScrollToTopButton = styled.div`
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+`;
 
 const Container = styled.div`
   margin-top: 5em;
