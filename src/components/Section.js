@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
 const Section = styled.section`
-  padding: 6em 2em;
+  padding: 6em 1em;
   box-sizing: border-box;
   position: relative;
   background-color: ${(props) => props.theme.colors[props.background]};
   color: ${(props) => props.theme.contrastColors[props.background]};
+
+  @media (min-width: 480px) {
+    padding: 6em 2em;
+  }
 
   @media (min-width: 768px) {
     padding: 7em 4em;
@@ -21,11 +25,15 @@ const Section = styled.section`
     width: 1px;
     background-color: ${(props) =>
       props.theme.contrastColors[props.background]};
-    left: 1em;
+    left: 0.5em;
     top: 0;
     bottom: 0;
     opacity: 0.5;
     z-index: 10;
+
+    @media (min-width: 480px) {
+      padding: 1em;
+    }
 
     @media (min-width: 768px) {
       left: 2em;

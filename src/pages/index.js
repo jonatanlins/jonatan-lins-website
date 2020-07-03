@@ -1,6 +1,13 @@
 import styled, { withTheme } from "styled-components";
-import { FiChevronsUp, FiPhone, FiInstagram, FiMail } from "react-icons/fi";
-import { FaHeart } from "react-icons/fa";
+import { FiChevronsUp } from "react-icons/fi";
+import {
+  FaHeart,
+  FaInstagram,
+  FaWhatsapp,
+  FaTelegramPlane,
+  FaPhone,
+  FaEnvelope,
+} from "react-icons/fa";
 import { useFormState } from "react-use-form-state";
 import Link from "next/link";
 
@@ -10,6 +17,7 @@ import Card from "../components/Card";
 import TextInput from "../components/TextInput";
 import Section from "../components/Section";
 import ImageFrame from "../components/ImageFrame";
+import ButtonGroup from "../components/ButtonGroup";
 import PageHeader from "../components/PageHeader";
 import PageFooter from "../components/PageFooter";
 import { P, H1, H2, H3, H4 } from "../components/Typography";
@@ -82,7 +90,11 @@ function Home({ theme }) {
               point of using Lorem Ipsum is that it has a more-or-less normal.
             </P>
 
-            <Button>Veja mais</Button>
+            <Link href="#project2">
+              <a>
+                <Button>Veja mais</Button>
+              </a>
+            </Link>
           </div>
 
           <div>
@@ -120,6 +132,16 @@ function Home({ theme }) {
       <a name="contact" />
       <Section background="contrast">
         <H3>Entre em contato</H3>
+
+        <ButtonGroup
+          buttons={[
+            { icon: FaInstagram, label: "Instagram", url: "google.com" },
+            { icon: FaTelegramPlane, label: "Telegram", url: "google.com" },
+            { icon: FaWhatsapp, label: "WhatsApp", url: "google.com" },
+            { icon: FaPhone, label: "Telefone", url: "google.com" },
+            { icon: FaEnvelope, label: "Email", url: "google.com" },
+          ]}
+        />
 
         <Card>
           <form onSubmit={handleContactSubmit}>
@@ -200,4 +222,4 @@ const FirstSection = styled(Section)`
   align-items: center;
 `;
 
-export default Home;
+export default withTheme(Home);
