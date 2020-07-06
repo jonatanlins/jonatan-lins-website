@@ -1,7 +1,6 @@
 import styled, { withTheme } from "styled-components";
-import { FiChevronsUp } from "react-icons/fi";
 import {
-  FaHeart,
+  FaPizzaSlice,
   FaInstagram,
   FaWhatsapp,
   FaTelegramPlane,
@@ -22,6 +21,34 @@ import PageHeader from "../components/PageHeader";
 import PageFooter from "../components/PageFooter";
 import { P, H1, H2, H3, H4 } from "../components/Typography";
 
+const headerLinks = [
+  { label: "Início", url: "/#", sectionId: "section-header" },
+  { label: "Sobre", url: "/#about", sectionId: "section-about" },
+  { label: "Projetos", url: "/#projects", sectionId: "section-projects" },
+  { label: "Contato", url: "/#contact", sectionId: "section-contact" },
+];
+
+const socialMediaButtons = [
+  {
+    icon: FaInstagram,
+    label: "Instagram",
+    url: "https://www.instagram.com/jonatan.lins",
+  },
+  { icon: FaTelegramPlane, label: "Telegram", url: "https://t.me/jonatanlins" },
+  {
+    icon: FaWhatsapp,
+    label: "WhatsApp",
+    url:
+      "https://api.whatsapp.com/send?phone=5581982224966&text=Ol%C3%A1,%20Jonatan,%20tudo%20bem?",
+  },
+  { icon: FaPhone, label: "Telefone", url: "tel:+5581982224966" },
+  {
+    icon: FaEnvelope,
+    label: "Email",
+    url: "mailto:jonatanpinheiro99@gmail.com",
+  },
+];
+
 function Home({ theme }) {
   const [formState, { text, email }] = useFormState();
 
@@ -39,16 +66,9 @@ function Home({ theme }) {
 
   return (
     <Container>
-      <PageHeader
-        links={[
-          { label: "Home", url: "" },
-          { label: "Sobre", url: "#about" },
-          { label: "Projetos", url: "#projects" },
-          { label: "Contato", url: "#contact" },
-        ]}
-      />
+      <PageHeader links={headerLinks} />
 
-      <FirstSection background="accent">
+      <FirstSection id="section-header" background="accent">
         <H2 light>Desenvolvedor de sites e Aplicativos</H2>
         <H1 light>Jonatan Lins</H1>
 
@@ -58,23 +78,26 @@ function Home({ theme }) {
       </FirstSection>
 
       <a name="about" />
-      <Section background="contrast">
+      <Section id="section-about" background="contrast">
         <H3>Sobre mim</H3>
-        <H4>Algum subtítulo qualquer</H4>
         <P>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum.
+          Desenvolvedor de sites e aplicativos, metido a designer de interfaces,
+          amante de tecnologia, estudante de Sistemas de Informação na{" "}
+          <a href="http://caruaru.upe.br">UPE</a>, jogador amador de GTA V e
+          somelier de biscoitos.
         </P>
         <P>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum.
+          Atualmente ocupo o cargo de Engenheiro de Software no{" "}
+          <a href="https://www.instagram.com/smart_research_labs">SmartLabs</a>,
+          sou responsável pelos front-ends de diversos projetos desenvolvidos
+          para o{" "}
+          <a href="https://www.shoppingdifusora.com.br">Shopping Difusora</a> e
+          para a <a href="https://caruaru.pe.gov.br">Prefeitura de Caruaru</a>.
         </P>
       </Section>
 
       <a name="projects" />
-      <Section background="secondary">
+      <Section id="section-projects" background="secondary">
         <H3>Meus projetos</H3>
 
         <Row>
@@ -83,18 +106,16 @@ function Home({ theme }) {
           </div>
 
           <div>
-            <H4>Projeto 1</H4>
+            <H4>DestakCaruaru</H4>
             <P>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal.
+              Um guia turístico para Caruaru e região, encontre os melhores
+              locais e estabelecimentos para tornar sua visita a Caruaru
+              inesquecível.
             </P>
 
-            <Link href="#project2">
-              <a>
-                <Button>Veja mais</Button>
-              </a>
-            </Link>
+            <a href="http://onelink.to/b3ktsx" target="_blank">
+              <Button>Veja mais</Button>
+            </a>
           </div>
 
           <div>
@@ -102,70 +123,49 @@ function Home({ theme }) {
           </div>
 
           <div>
-            <H4>Projeto 2</H4>
+            <H4>Compre Nosso</H4>
             <P>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal.
+              Uma loja moderna onde empresas de todo o Brasil podem comprar
+              diversas peças de vestuário em atacado.
             </P>
 
-            <Button>Veja mais</Button>
-          </div>
-
-          <div>
-            <ImageFrame src="https://via.placeholder.com/400x400/ff4655/ece8e1" />
-          </div>
-
-          <div>
-            <H4>Projeto 3</H4>
-            <P>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal.
-            </P>
-
-            <Button>Veja mais</Button>
+            <a href="https://comprenosso.com" target="_blank">
+              <Button>Veja mais</Button>
+            </a>
           </div>
         </Row>
       </Section>
 
       <a name="contact" />
-      <Section background="contrast">
+      <Section id="section-contact" background="contrast">
         <H3>Entre em contato</H3>
 
-        <ButtonGroup
-          buttons={[
-            { icon: FaInstagram, label: "Instagram", url: "google.com" },
-            { icon: FaTelegramPlane, label: "Telegram", url: "google.com" },
-            { icon: FaWhatsapp, label: "WhatsApp", url: "google.com" },
-            { icon: FaPhone, label: "Telefone", url: "google.com" },
-            { icon: FaEnvelope, label: "Email", url: "google.com" },
-          ]}
-        />
+        <ContactGrid>
+          <ButtonGroup
+            buttons={socialMediaButtons}
+            className="buttonGroup"
+            target="_blank"
+          />
 
-        <Card>
-          <form onSubmit={handleContactSubmit}>
-            <H4 light>Escreva uma mensagem</H4>
+          <Card>
+            <form onSubmit={handleContactSubmit}>
+              <H4 light>Escreva uma mensagem</H4>
 
-            <TextInput label="Seu nome" {...text("name")} />
-            <TextInput label="Seu email" {...email("email")} />
-            <TextInput label="Assunto da conversa" {...text("subject")} />
-            <TextInput label="Sua mensagem" {...text("content")} multiline />
+              <TextInput label="Seu nome" {...text("name")} />
+              <TextInput label="Seu email" {...email("email")} />
+              <TextInput label="Assunto da conversa" {...text("subject")} />
+              <TextInput label="Sua mensagem" {...text("content")} multiline />
 
-            <Button>Entre em contato</Button>
-
-            {/* <a href="tel:+5581982224966">(81) 982224966</a>
-      <a href="mailto:jonatanpinheiro99@gmail.com">
-        jonatanpinheiro99@gmail.com
-      </a> */}
-          </form>
-        </Card>
+              <Button>Entre em contato</Button>
+            </form>
+          </Card>
+        </ContactGrid>
       </Section>
 
       <PageFooter>
         <P light>
-          Feito com <FaHeart title="amor" color={theme.colors.secondary} /> por{" "}
-          <a href="https://www.instagram.com/jonatan.lins">Jonatan Lins</a>
+          Feito com <FaPizzaSlice title="amor" color={theme.colors.secondary} />{" "}
+          por <a href="https://www.instagram.com/jonatan.lins">Jonatan Lins</a>
         </P>
 
         <P light>
@@ -178,26 +178,37 @@ function Home({ theme }) {
           </a>
         </P>
       </PageFooter>
-
-      <ScrollToTopButton>
-        <Link href="">
-          <a>
-            <IconButton icon={FiChevronsUp} />
-          </a>
-        </Link>
-      </ScrollToTopButton>
     </Container>
   );
 }
 
-const ScrollToTopButton = styled.div`
-  position: fixed;
-  bottom: 1em;
-  right: 1em;
-`;
-
 const Container = styled.div`
   margin-top: 5em;
+`;
+
+const ContactGrid = styled.div`
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 1em;
+
+  @media (min-width: 480px) {
+    .buttonGroup {
+      justify-content: flex-start;
+    }
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: 160px auto;
+
+    .buttonGroup {
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 240px auto;
+  }
 `;
 
 const Row = styled.div`

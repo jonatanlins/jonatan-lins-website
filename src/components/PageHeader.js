@@ -1,16 +1,21 @@
 import styled from "styled-components";
-import Link from "next/link";
+import Scrollspy from "react-scrollspy";
 
 function Component({ links }) {
   return (
     <Container>
-      <NavBar>
+      <Scrollspy
+        items={links.map((link) => link.sectionId)}
+        currentClassName="active"
+        componentTag={NavBar}
+        offset={-80}
+      >
         {links?.map((link) => (
-          <Link key={link.url} href={link.url} passHref>
-            <Anchor>{link.label}</Anchor>
-          </Link>
+          <Button key={link.url} href={link.url}>
+            {link.label}
+          </Button>
         ))}
-      </NavBar>
+      </Scrollspy>
     </Container>
   );
 }
@@ -33,7 +38,7 @@ const NavBar = styled.nav`
   justify-content: center;
 `;
 
-const Anchor = styled.a`
+const Button = styled.a`
   padding: 2px 12px 0;
   border-bottom: 2px solid transparent;
   margin: 0 7px -2px;
@@ -47,7 +52,8 @@ const Anchor = styled.a`
   user-select: none;
   transition: all 0.1s ease;
 
-  &:hover {
+  &:hover,
+  &.active {
     border-bottom-color: ${(props) => props.theme.colors.secondary};
   }
 `;

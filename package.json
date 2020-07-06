@@ -16,6 +16,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-icons": "^3.10.0",
+    "react-scrollspy": "^3.4.2",
     "react-use-form-state": "^0.13.1",
     "styled-components": "^5.1.1",
     "typescript": "^3.9.5"

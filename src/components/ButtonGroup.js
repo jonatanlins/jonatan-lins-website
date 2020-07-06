@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-function Component({ buttons = [] }) {
+function Component({ buttons = [], target, className }) {
   return (
-    <Container>
+    <Container className={className}>
       {buttons.map(({ icon: Icon, label, url }) => (
-        <Button href={url} title={label}>
+        <Button href={url} title={label} target={target}>
           <Icon />
         </Button>
       ))}
@@ -15,7 +15,6 @@ function Component({ buttons = [] }) {
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 2em 0;
 `;
 
 const Button = styled.a`
@@ -24,8 +23,9 @@ const Button = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 2em;
-  height: 2em;
+  width: 3em;
+  height: 3em;
+  margin: 0.5em;
 
   svg {
     font-size: 1.5em;

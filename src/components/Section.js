@@ -32,7 +32,7 @@ const Section = styled.section`
     z-index: 10;
 
     @media (min-width: 480px) {
-      padding: 1em;
+      left: 1em;
     }
 
     @media (min-width: 768px) {
