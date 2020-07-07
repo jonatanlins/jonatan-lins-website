@@ -1,9 +1,14 @@
 import styled from "styled-components";
 import cn from "classnames";
 
-function Component({ children, primary, type, onClick }) {
+function Component({ children, primary, type, onClick, className }) {
   return (
-    <Button className={cn({ primary })} type={type} onClick={onClick}>
+    <Button
+      className={cn({ primary })}
+      type={type}
+      onClick={onClick}
+      className={className}
+    >
       <OutterContainer>
         <InnerContainer>{children}</InnerContainer>
       </OutterContainer>

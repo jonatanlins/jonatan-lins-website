@@ -1,11 +1,20 @@
 import styled, { css } from "styled-components";
 import cn from "classnames";
 
-function Component({ type, ref, name, value, onChange, label, multiline }) {
+function Component({
+  type,
+  ref,
+  name,
+  value,
+  onChange,
+  label,
+  multiline,
+  className,
+}) {
   const InputComponent = multiline ? MultilineInput : Input;
 
   return (
-    <Container className={cn({ active: value })}>
+    <Container className={cn(className, { active: value })}>
       <InputComponent
         type={type}
         ref={ref}
@@ -24,7 +33,6 @@ const Container = styled.label`
   position: relative;
   box-sizing: border-box;
   padding: 7px;
-  margin: 8px 0;
 
   &:before,
   &:after {
