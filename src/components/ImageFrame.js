@@ -41,7 +41,8 @@ const Container = styled.div`
 `;
 
 const Image = styled.img`
-  max-width: 100%;
+  width: 100%;
+  display: block;
 `;
 
 export default Component;
