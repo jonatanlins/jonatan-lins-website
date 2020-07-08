@@ -7,7 +7,7 @@ function Component({ links }) {
       <Scrollspy
         items={links.map((link) => link.sectionId)}
         currentClassName="active"
-        componentTag={NavBar}
+        componentTag={"nav"}
         offset={-80}
       >
         {links?.map((link) => (
@@ -30,12 +30,12 @@ const Container = styled.header`
   height: 5em;
   background-color: ${(props) => props.theme.colors.accent};
   border-bottom: 2px solid #33333340;
-`;
 
-const NavBar = styled.nav`
-  height: 100%;
-  display: flex;
-  justify-content: center;
+  nav {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 const Button = styled.a`
