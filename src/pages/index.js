@@ -148,7 +148,7 @@ function Home({ theme }) {
           />
 
           <Card>
-            <form onSubmit={handleContactSubmit}>
+            <Form onSubmit={handleContactSubmit}>
               <H4 light>Escreva uma mensagem</H4>
 
               <TextInput label="Seu nome" {...text("name")} />
@@ -156,17 +156,14 @@ function Home({ theme }) {
               <TextInput label="Assunto da conversa" {...text("subject")} />
               <TextInput label="Sua mensagem" {...text("content")} multiline />
 
-              <Button>Entre em contato</Button>
-            </form>
+              <Button className="center">Entre em contato</Button>
+            </Form>
           </Card>
         </ContactGrid>
       </Section>
 
       <PageFooter>
-        <P light>
-          Feito com <FaPizzaSlice title="amor" color={theme.colors.secondary} />{" "}
-          por <a href="https://www.instagram.com/jonatan.lins">Jonatan Lins</a>
-        </P>
+        <P light>Feito com ❤️</P>
 
         <P light>
           Inspirado no site do&nbsp;
@@ -182,6 +179,20 @@ function Home({ theme }) {
   );
 }
 
+const Form = styled.form`
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(12, 1fr);
+
+  > * {
+    grid-column: auto / span 12;
+  }
+
+  .center {
+    margin: 0 auto;
+  }
+`;
+
 const Container = styled.div`
   margin-top: 5em;
 `;
@@ -194,6 +205,7 @@ const ContactGrid = styled.div`
   @media (min-width: 480px) {
     .buttonGroup {
       justify-content: flex-start;
+      font-size: 20px;
     }
   }
 
@@ -207,7 +219,11 @@ const ContactGrid = styled.div`
   }
 
   @media (min-width: 1024px) {
-    grid-template-columns: 240px auto;
+    grid-template-columns: 200px auto;
+
+    .buttonGroup {
+      font-size: 22px;
+    }
   }
 `;
 
