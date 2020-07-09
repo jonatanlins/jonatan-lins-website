@@ -1,6 +1,8 @@
+import React from "react";
+
 function Component({ screen }) {
   return (
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 257 521">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 257 521">
       <defs>
         <clipPath id="screenFormat">
           <path
@@ -19,7 +21,7 @@ function Component({ screen }) {
       <path
         fill="#ff4655"
         stroke="#FFFFFF"
-        stroke-width="1"
+        strokeWidth="1"
         d="
           M40,3 h177 a37 37 90 0 1 37,37
           v441 a37 37 90 0 1 -37,37
@@ -39,7 +41,7 @@ function Component({ screen }) {
       <path
         fill="none"
         stroke="#FFFFFF"
-        stroke-width="1"
+        strokeWidth="1"
         d="
           M40,15 h20 a5 5 90 0 1 5,5 a13 13 90 0 0 13,13
           h101 a13 13 90 0 0 13,-13 a5 5 90 0 1 5,-5
@@ -59,7 +61,7 @@ function Component({ screen }) {
 
       <path
         stroke="#FFFFFF"
-        stroke-width="3"
+        strokeWidth="3"
         d="
           M1.5,71 v18
           M1.5,107 v36
