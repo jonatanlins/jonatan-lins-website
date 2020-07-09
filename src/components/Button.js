@@ -5,10 +5,9 @@ import cn from "classnames";
 function Component({ children, primary, type, onClick, className }) {
   return (
     <Button
-      className={cn({ primary })}
+      className={cn(className, { primary })}
       type={type}
       onClick={onClick}
-      className={className}
     >
       <OutterContainer>
         <InnerContainer>{children}</InnerContainer>

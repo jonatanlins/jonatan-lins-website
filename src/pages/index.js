@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import { useFormState } from "react-use-form-state";
 
+import LandingPageLayout from "../layouts/LandingPage";
 import Button from "../components/Button";
 import Card from "../components/Card";
 import TextInput from "../components/TextInput";
@@ -63,7 +64,7 @@ function Home({ theme }) {
   }
 
   return (
-    <Container>
+    <LandingPageLayout>
       <PageHeader links={headerLinks} />
 
       <FirstSection id="section-header" background="accent">
@@ -173,7 +174,7 @@ function Home({ theme }) {
           </a>
         </P>
       </PageFooter>
-    </Container>
+    </LandingPageLayout>
   );
 }
 
@@ -189,10 +190,6 @@ const Form = styled.form`
   .center {
     margin: 0 auto;
   }
-`;
-
-const Container = styled.div`
-  margin-top: 5em;
 `;
 
 const ContactGrid = styled.div`
