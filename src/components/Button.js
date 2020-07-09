@@ -1,13 +1,13 @@
+import React from "react";
 import styled from "styled-components";
 import cn from "classnames";
 
 function Component({ children, primary, type = "button", onClick, className }) {
   return (
     <Button
-      className={cn({ primary })}
+      className={cn(className, { primary })}
       type={type}
       onClick={onClick}
-      className={className}
     >
       <OutterContainer>
         <InnerContainer>{children}</InnerContainer>

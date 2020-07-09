@@ -1,6 +1,5 @@
 import styled, { withTheme } from "styled-components";
 import {
-  FaPizzaSlice,
   FaInstagram,
   FaWhatsapp,
   FaTelegramPlane,
@@ -8,12 +7,12 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import { useFormState } from "react-use-form-state";
-import Link from "next/link";
 
+import LandingPageLayout from "../layouts/LandingPage";
 import Button from "../components/Button";
-import IconButton from "../components/IconButton";
 import Card from "../components/Card";
 import TextInput from "../components/TextInput";
+import PhoneFrame from "../components/PhoneFrame";
 import Section from "../components/Section";
 import ImageFrame from "../components/ImageFrame";
 import ButtonGroup from "../components/ButtonGroup";
@@ -65,7 +64,7 @@ function Home({ theme }) {
   }
 
   return (
-    <Container>
+    <LandingPageLayout>
       <PageHeader links={headerLinks} />
 
       <FirstSection id="section-header" background="accent">
@@ -102,7 +101,7 @@ function Home({ theme }) {
 
         <Row>
           <div>
-            <ImageFrame src="https://via.placeholder.com/400x400/ff4655/ece8e1" />
+            <PhoneFrame screen="/images/projects/destak-screenshot-01.jpg" />
           </div>
 
           <div>
@@ -185,7 +184,7 @@ function Home({ theme }) {
           </a>
         </P>
       </PageFooter>
-    </Container>
+    </LandingPageLayout>
   );
 }
 
@@ -208,10 +207,6 @@ const Form = styled.form`
       grid-column: auto / span 1;
     }
   }
-`;
-
-const Container = styled.div`
-  margin-top: 5em;
 `;
 
 const ContactGrid = styled.div`

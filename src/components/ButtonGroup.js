@@ -1,10 +1,11 @@
+import React from "react";
 import styled from "styled-components";
 
 function Component({ buttons = [], target, className }) {
   return (
     <Container className={className}>
       {buttons.map(({ icon: Icon, label, url }) => (
-        <Button href={url} title={label} target={target}>
+        <Button key={url} href={url} title={label} target={target}>
           <Icon />
         </Button>
       ))}
