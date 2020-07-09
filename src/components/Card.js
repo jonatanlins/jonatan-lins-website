@@ -11,6 +11,7 @@ function Component({ children }) {
 const OutterContainer = styled.div`
   padding: 1em 0;
   position: relative;
+  color: ${(props) => props.theme.colors.contrast};
 
   &:before {
     content: "";

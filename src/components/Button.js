@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import cn from "classnames";
 
-function Component({ children, primary, type, onClick, className }) {
+function Component({ children, primary, type = "button", onClick, className }) {
   return (
     <Button
       className={cn({ primary })}

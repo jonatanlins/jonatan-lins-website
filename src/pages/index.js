@@ -149,23 +149,33 @@ function Home({ theme }) {
 
           <Card>
             <Form onSubmit={handleContactSubmit}>
-              <H4 light>Escreva uma mensagem</H4>
+              <H4>Escreva uma mensagem</H4>
 
-              <TextInput label="Seu nome" {...text("name")} />
-              <TextInput label="Seu email" {...email("email")} />
+              <TextInput
+                label="Seu nome"
+                {...text("name")}
+                className="half-size"
+              />
+              <TextInput
+                label="Seu email"
+                {...email("email")}
+                className="half-size"
+              />
               <TextInput label="Assunto da conversa" {...text("subject")} />
               <TextInput label="Sua mensagem" {...text("content")} multiline />
 
-              <Button className="center">Entre em contato</Button>
+              <Button type="center" className="center">
+                Entre em contato
+              </Button>
             </Form>
           </Card>
         </ContactGrid>
       </Section>
 
       <PageFooter>
-        <P light>Feito com ❤️</P>
+        <P>Feito com ❤️</P>
 
-        <P light>
+        <P>
           Inspirado no site do&nbsp;
           <a href="https://playvalorant.com/pt-br">Valorant</a>
           <br />
@@ -182,14 +192,21 @@ function Home({ theme }) {
 const Form = styled.form`
   display: grid;
   grid-gap: 1em;
-  grid-template-columns: repeat(12, 1fr);
 
-  > * {
-    grid-column: auto / span 12;
+  > .center {
+    margin: 0 auto;
   }
 
-  .center {
-    margin: 0 auto;
+  @media (min-width: 1280px) {
+    grid-template-columns: 1fr 1fr;
+
+    > * {
+      grid-column: auto / span 2;
+    }
+
+    > .half-size {
+      grid-column: auto / span 1;
+    }
   }
 `;
 
