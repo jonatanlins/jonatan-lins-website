@@ -13,7 +13,11 @@ function Component({ links }) {
       >
         {links?.map((link) => (
           <Button key={link.url} href={link.url}>
-            {link.label}
+            {link.image ? (
+              <img src={link.image} alt={link.label} />
+            ) : (
+              link.label
+            )}
           </Button>
         ))}
       </Scrollspy>
@@ -56,6 +60,10 @@ const Button = styled.a`
   &:hover,
   &.active {
     border-bottom-color: ${(props) => props.theme.colors.secondary};
+  }
+
+  img {
+    width: 3.5em;
   }
 `;
 

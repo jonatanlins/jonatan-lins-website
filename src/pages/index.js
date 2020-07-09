@@ -21,7 +21,12 @@ import PageFooter from "../components/PageFooter";
 import { P, H1, H2, H3, H4 } from "../components/Typography";
 
 const headerLinks = [
-  { label: "Início", url: "/#", sectionId: "section-header" },
+  {
+    label: "Início",
+    url: "/#",
+    sectionId: "section-header",
+    image: "/images/brand/logo-contrast.svg",
+  },
   { label: "Sobre", url: "/#about", sectionId: "section-about" },
   { label: "Projetos", url: "/#projects", sectionId: "section-projects" },
   { label: "Contato", url: "/#contact", sectionId: "section-contact" },
