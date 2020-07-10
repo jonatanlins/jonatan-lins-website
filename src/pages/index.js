@@ -22,7 +22,12 @@ import PageFooter from "../components/PageFooter";
 import { P, H1, H2, H3, H4 } from "../components/Typography";
 
 const headerLinks = [
-  { label: "Início", url: "/#", sectionId: "section-header" },
+  {
+    label: "Início",
+    url: "/#",
+    sectionId: "section-header",
+    image: "/images/brand/logo-contrast.svg",
+  },
   { label: "Sobre", url: "/#about", sectionId: "section-about" },
   { label: "Projetos", url: "/#projects", sectionId: "section-projects" },
   { label: "Contato", url: "/#contact", sectionId: "section-contact" },
@@ -155,7 +160,7 @@ function Home({ theme }) {
 
           <Card>
             <Form onSubmit={handleContactSubmit}>
-              <H4 light>Escreva uma mensagem</H4>
+              <H4>Escreva uma mensagem</H4>
 
               <TextInput label="Seu nome" {...text("name")} required />
               <TextInput
@@ -165,16 +170,18 @@ function Home({ theme }) {
               />
               <TextInput label="Sua mensagem" {...text("message")} multiline />
 
-              <Button className="center">Entre em contato</Button>
+              <Button type="center" className="center">
+                Entre em contato
+              </Button>
             </Form>
           </Card>
         </ContactGrid>
       </Section>
 
       <PageFooter>
-        <P light>Feito com ❤️</P>
+        <P>Feito com ❤️</P>
 
-        <P light>
+        <P>
           Inspirado no site do&nbsp;
           <a href="https://playvalorant.com/pt-br">Valorant</a>
           <br />
@@ -191,13 +198,8 @@ function Home({ theme }) {
 const Form = styled.form`
   display: grid;
   grid-gap: 1em;
-  grid-template-columns: repeat(12, 1fr);
 
-  > * {
-    grid-column: auto / span 12;
-  }
-
-  .center {
+  > .center {
     margin: 0 auto;
   }
 `;
