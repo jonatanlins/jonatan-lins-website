@@ -94,7 +94,7 @@ function Home({ theme }) {
         <P>
           Desenvolvedor de sites e aplicativos, metido a designer de interfaces,
           amante de tecnologia, estudante de Sistemas de Informação na{" "}
-          <a href="http://caruaru.upe.br">UPE</a>, jogador amador de GTA V e
+          <a href="http://caruaru.upe.br">UPE</a>, jogador amador de GTA e
           somelier de biscoitos.
         </P>
         <P>
@@ -129,7 +129,7 @@ function Home({ theme }) {
             </a>
           </div>
 
-          <div>
+          {/* <div>
             <ImageFrame src="https://via.placeholder.com/400x400/ff4655/ece8e1" />
           </div>
 
@@ -143,7 +143,7 @@ function Home({ theme }) {
             <a href="https://comprenosso.com" target="_blank">
               <Button>Veja mais</Button>
             </a>
-          </div>
+          </div> */}
         </Row>
       </Section>
 
