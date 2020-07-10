@@ -11,6 +11,7 @@ function Component({
   label,
   multiline,
   className,
+  required,
 }) {
   const InputComponent = multiline ? MultilineInput : Input;
 
@@ -22,6 +23,7 @@ function Component({
         name={name}
         value={value}
         onChange={onChange}
+        required={required}
       />
       <Label>{label}</Label>
     </Container>

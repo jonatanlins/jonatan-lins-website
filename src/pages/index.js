@@ -7,6 +7,7 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import { useFormState } from "react-use-form-state";
+import api from "../services/api";
 
 import LandingPageLayout from "../layouts/LandingPage";
 import Button from "../components/Button";
@@ -54,9 +55,15 @@ function Home({ theme }) {
   function handleContactSubmit(event) {
     event.preventDefault();
 
-    alert("Esse formulário ainda não funciona :(");
+    const data = {
+      name: formState.values.name,
+      contact: formState.values.contact,
+      message: formState.values.message,
+    };
 
-    console.log(formState.values);
+    api.post(`contacts`, data).then((response) => {
+      alert("Mensagem enviada com sucesso! Farei contato em breve.");
+    });
   }
 
   function goToContactSection() {
@@ -150,10 +157,13 @@ function Home({ theme }) {
             <Form onSubmit={handleContactSubmit}>
               <H4 light>Escreva uma mensagem</H4>
 
-              <TextInput label="Seu nome" {...text("name")} />
-              <TextInput label="Seu email" {...email("email")} />
-              <TextInput label="Assunto da conversa" {...text("subject")} />
-              <TextInput label="Sua mensagem" {...text("content")} multiline />
+              <TextInput label="Seu nome" {...text("name")} required />
+              <TextInput
+                label="Seu telefone ou email"
+                {...text("contact")}
+                required
+              />
+              <TextInput label="Sua mensagem" {...text("message")} multiline />
 
               <Button className="center">Entre em contato</Button>
             </Form>
