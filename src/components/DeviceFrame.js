@@ -100,7 +100,7 @@ function Component({ screen, device }) {
         fill="none"
         stroke="#FFFFFF"
         strokeWidth="1"
-        strokeLineCap="round"
+        strokeLinecap="round"
         strokeLinejoin="round"
         d={`${deviceData.screen}${deviceData.details}`}
       />
