@@ -26,7 +26,7 @@ const headerLinks = [
     label: "Início",
     url: "/#",
     sectionId: "section-header",
-    image: "/images/brand/logo-contrast.svg",
+    image: "/images/brand/contrast.svg",
   },
   { label: "Sobre", url: "/#about", sectionId: "section-about" },
   { label: "Projetos", url: "/#projects", sectionId: "section-projects" },
@@ -54,7 +54,7 @@ const socialMediaButtons = [
   },
 ];
 
-function Home({ theme }) {
+function Page({ theme }) {
   const [formState, { text, email }] = useFormState();
 
   function handleContactSubmit(event) {
@@ -260,4 +260,4 @@ const FirstSection = styled(Section)`
   text-align: center;
 `;
 
-export default withTheme(Home);
+export default withTheme(Page);
