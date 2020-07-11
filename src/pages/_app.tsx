@@ -10,6 +10,7 @@ function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Jonatan Lins</title>
+        <meta name="theme-color" content={theme?.colors?.accent} />
       </Head>
 
       <ThemeProvider theme={theme}>

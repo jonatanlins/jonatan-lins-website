@@ -250,10 +250,11 @@ const Row = styled.div`
 `;
 
 const FirstSection = styled(Section)`
-  padding: 8em 0 !important;
+  padding: 8em 1em !important;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 `;
 
 export default withTheme(Home);

@@ -1,4 +1,3 @@
-import React from "react";
 import styled, { css } from "styled-components";
 
 const textMixin = css`
@@ -8,8 +7,8 @@ const textMixin = css`
       : props.dark
       ? props.theme.colors.primary
       : "inherit"};
-  line-height: 1.618;
   font-weight: 400;
+  line-height: 1.618;
   margin: 0;
 `;
 
@@ -17,6 +16,8 @@ export const H1 = styled.h1`
   ${textMixin}
   font-family: Valorant, arial, georgia, sans-serif;
   font-size: 4em;
+  line-height: 1.3;
+  margin: 0.3em 0;
 
   @media (min-width: 768px) {
     font-size: 5em;
@@ -31,6 +32,8 @@ export const H2 = styled.h2`
   ${textMixin}
   font-family: Valorant, arial, georgia, sans-serif;
   font-size: 1.125em;
+  line-height: 1.5;
+  margin: 0.2em 0;
 
   @media (min-width: 1024px) {
     font-size: 1.25em;

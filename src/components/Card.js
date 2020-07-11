@@ -29,7 +29,7 @@ const OutterContainer = styled.div`
 
 const InnerContainer = styled.div`
   background-color: ${(props) => props.theme.colors.primary};
-  padding: 1.5em 2.5em;
+  padding: 1em 1.5em;
 
   &:before,
   &:after {
@@ -49,6 +49,10 @@ const InnerContainer = styled.div`
     bottom: 0;
     border-top: 1em solid ${(props) => props.theme.colors.primary};
     border-right: 1em solid transparent;
+  }
+
+  @media (min-width: 480px) {
+    padding: 1.5em 2.5em;
   }
 `;
 
