@@ -13,7 +13,7 @@ import LandingPageLayout from "../layouts/LandingPage";
 import Button from "../components/Button";
 import Card from "../components/Card";
 import TextInput from "../components/TextInput";
-import PhoneFrame from "../components/PhoneFrame";
+import DeviceFrame from "../components/DeviceFrame";
 import Section from "../components/Section";
 import ImageFrame from "../components/ImageFrame";
 import ButtonGroup from "../components/ButtonGroup";
@@ -113,7 +113,10 @@ function Home({ theme }) {
 
         <Row>
           <div>
-            <PhoneFrame screen="/images/projects/destak-screenshot-01.jpg" />
+            <DeviceFrame
+              screen="/images/projects/destak-screenshot-01.jpg"
+              device="galaxyA30"
+            />
           </div>
 
           <div>
