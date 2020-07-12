@@ -5,18 +5,22 @@ import theme from "../style/theme";
 import "../style/global.css";
 import "../style/fonts.css";
 
-export const siteTitle = "Jonatan Lins";
+const title = "Jonatan Lins";
+const description = "Meu site pessoal, blog e portfólio";
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>{siteTitle}</title>
+        <title>{title}</title>
+
         <meta name="theme-color" content={theme?.colors?.accent} />
-        <meta name="description" content="Meu site pessoal, blog e portfólio" />
-        <meta name="og:title" content={siteTitle} />
-        <meta property="og:image" content={`/images/brand/banner.png`} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="description" content={description} />
+        <meta name="twitter:card" content="summary" />
+
+        <meta property="og:title" content={title} />
+        <meta property="og:image" content="/images/brand/banner.png" />
+        <meta property="og:description" content={description} />
       </Head>
 
       <ThemeProvider theme={theme}>
