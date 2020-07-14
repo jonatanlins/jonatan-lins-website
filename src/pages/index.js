@@ -15,19 +15,16 @@ import Card from "../components/Card";
 import TextInput from "../components/TextInput";
 import DeviceFrame from "../components/DeviceFrame";
 import Section from "../components/Section";
-import ImageFrame from "../components/ImageFrame";
 import ButtonGroup from "../components/ButtonGroup";
 import PageHeader from "../components/PageHeader";
 import PageFooter from "../components/PageFooter";
 import { P, H1, H2, H3, H4 } from "../components/Typography";
 
+import logo from "../assets/images/brand/contrast.svg";
+import destakCaruaruImage01 from "../assets/images/projects/destak-screenshot-01.jpg";
+
 const headerLinks = [
-  {
-    label: "Início",
-    url: "/#",
-    sectionId: "section-header",
-    image: "/images/brand/contrast.svg",
-  },
+  { label: "Início", url: "/#", sectionId: "section-header", image: logo },
   { label: "Sobre", url: "/#about", sectionId: "section-about" },
   { label: "Projetos", url: "/#projects", sectionId: "section-projects" },
   { label: "Contato", url: "/#contact", sectionId: "section-contact" },
@@ -113,10 +110,7 @@ function Page({ theme }) {
 
         <Row>
           <div>
-            <DeviceFrame
-              screen="/images/projects/destak-screenshot-01.jpg"
-              device="galaxyA30"
-            />
+            <DeviceFrame screen={destakCaruaruImage01} device="galaxyA30" />
           </div>
 
           <div>

@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import theme from "../style/theme";
 import "../style/global.css";
 import "../style/fonts.css";
+import bannerImage from "../assets/images/brand/banner.png";
 
 const title = "Jonatan Lins";
 const description = "Meu site pessoal, blog e portfólio";
@@ -19,7 +20,7 @@ function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:card" content="summary" />
 
         <meta property="og:title" content={title} />
-        <meta property="og:image" content="/images/brand/banner.png" />
+        <meta property="og:image" content={bannerImage} />
         <meta property="og:description" content={description} />
       </Head>
 
