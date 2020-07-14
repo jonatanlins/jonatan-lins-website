@@ -5,7 +5,13 @@ function Component({ buttons = [], target, className }) {
   return (
     <Container className={className}>
       {buttons.map(({ icon: Icon, label, url }) => (
-        <Button key={url} href={url} title={label} target={target}>
+        <Button
+          key={url}
+          href={url}
+          title={label}
+          target={target}
+          rel="noopener"
+        >
           <Icon />
         </Button>
       ))}

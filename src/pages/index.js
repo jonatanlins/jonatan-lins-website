@@ -120,15 +120,15 @@ function Page({ theme }) {
           </div>
 
           <div>
-            <H4>DestakCaruaru</H4>
+            <H4>Destak Caruaru</H4>
             <P>
               Um guia turístico para Caruaru e região, encontre os melhores
               locais e estabelecimentos para tornar sua visita a Caruaru
               inesquecível.
             </P>
 
-            <a href="http://onelink.to/b3ktsx" target="_blank">
-              <Button>Veja mais</Button>
+            <a href="http://onelink.to/b3ktsx" target="_blank" rel="noopener">
+              <Button>Veja o app</Button>
             </a>
           </div>
 
@@ -143,8 +143,8 @@ function Page({ theme }) {
               diversas peças de vestuário em atacado.
             </P>
 
-            <a href="https://comprenosso.com" target="_blank">
-              <Button>Veja mais</Button>
+            <a href="https://comprenosso.com" target="_blank" rel="noopener">
+              <Button>Acesse o site</Button>
             </a>
           </div> */}
         </Row>
