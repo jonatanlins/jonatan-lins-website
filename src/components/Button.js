@@ -9,9 +9,9 @@ function Component({ children, primary, type = "button", onClick, className }) {
       type={type}
       onClick={onClick}
     >
-      <OutterContainer>
+      <OuterContainer>
         <InnerContainer>{children}</InnerContainer>
-      </OutterContainer>
+      </OuterContainer>
     </Button>
   );
 }
@@ -74,7 +74,7 @@ const Button = styled.button`
   }
 `;
 
-const OutterContainer = styled.div`
+const OuterContainer = styled.div`
   background-color: ${(props) => props.theme.colors.contrast};
   color: ${(props) => props.theme.colors.primary};
   height: 100%;
@@ -114,7 +114,7 @@ const OutterContainer = styled.div`
 
   button.primary & {
     background-color: ${(props) => props.theme.colors.secondary};
-    color: ${(props) => props.theme.colors.contrast};
+    color: ${(props) => props.theme.contrastColors.secondary};
 
     &:before {
       background-color: ${(props) => props.theme.colors.primary};

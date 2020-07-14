@@ -7,7 +7,7 @@ const theme = {
   },
   contrastColors: {
     primary: "#ece8e1",
-    secondary: "#ece8e1",
+    secondary: "#FFFFFF",
     accent: "#ece8e1",
     contrast: "#0f1923",
   },
