@@ -50,7 +50,7 @@ const socialMediaButtons = [
   {
     icon: FaEnvelope,
     label: "Email",
-    url: "mailto:jonatanpinheiro99@gmail.com",
+    url: "mailto:contato@jonatanlins.com",
   },
 ];
 
