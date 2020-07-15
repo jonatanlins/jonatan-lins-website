@@ -4,8 +4,9 @@ export const baseURL = "/api";
 
 const api = axios.create({ baseURL });
 
-export function fetcher(url) {
-  return api.get(url).then((response) => response.data);
+export async function fetcher(url: string) {
+  const response = await api.get(url);
+  return response.data;
 }
 
 export default api;
