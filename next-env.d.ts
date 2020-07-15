@@ -1,9 +1,37 @@
 /// <reference types="next" />
 /// <reference types="next/types/global" />
 
-declare module "*.jpg";
-declare module "*.jpeg";
-declare module "*.png";
-declare module "*.svg";
-declare module "*.gif";
-declare module "*.webp";
+declare module "*.jpg" {
+  const value: string;
+  export = value;
+}
+
+declare module "*.jpeg" {
+  const value: string;
+  export = value;
+}
+
+declare module "*.png" {
+  const value: string;
+  export = value;
+}
+
+declare module "*.svg" {
+  const value: string;
+  export = value;
+}
+
+declare module "*.webp" {
+  const value: string;
+  export = value;
+}
+
+declare module "*.gif" {
+  const value: string;
+  export = value;
+}
+
+declare module "*.ico" {
+  const value: string;
+  export = value;
+}
