@@ -20,7 +20,7 @@ function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:card" content="summary" />
 
         <meta property="og:title" content={title} />
-        <meta property="og:image" content={bannerImage} />
+        <meta property="og:image" content={bannerImage.toString()} />
         <meta property="og:description" content={description} />
       </Head>
 
