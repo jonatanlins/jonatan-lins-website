@@ -30,8 +30,8 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
-        <Head lang="pt-br" />
+      <Html lang="pt-br">
+        <Head />
         <body>
           <Main />
           <NextScript />
