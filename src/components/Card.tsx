@@ -1,15 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 
-function Component({ children }) {
+export type Props = {
+  children: React.ReactNode;
+};
+
+function Component(props: Props): JSX.Element {
   return (
-    <OutterContainer>
-      <InnerContainer>{children}</InnerContainer>
-    </OutterContainer>
+    <OuterContainer>
+      <InnerContainer>{props.children}</InnerContainer>
+    </OuterContainer>
   );
 }
 
-const OutterContainer = styled.div`
+const OuterContainer = styled.div`
   padding: 1em 0;
   position: relative;
   color: ${(props) => props.theme.colors.contrast};

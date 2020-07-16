@@ -35,19 +35,32 @@ const socialMediaButtons = [
     icon: FaInstagram,
     label: "Instagram",
     url: "https://www.instagram.com/jonatan.lins",
+    target: "_blank",
   },
-  { icon: FaTelegramPlane, label: "Telegram", url: "https://t.me/jonatanlins" },
+  {
+    icon: FaTelegramPlane,
+    label: "Telegram",
+    url: "https://t.me/jonatanlins",
+    target: "_blank",
+  },
   {
     icon: FaWhatsapp,
     label: "WhatsApp",
     url:
       "https://api.whatsapp.com/send?phone=5581982224966&text=Ol%C3%A1,%20Jonatan,%20tudo%20bem?",
+    target: "_blank",
   },
-  { icon: FaPhone, label: "Telefone", url: "tel:+5581982224966" },
+  {
+    icon: FaPhone,
+    label: "Telefone",
+    url: "tel:+5581982224966",
+    target: "_blank",
+  },
   {
     icon: FaEnvelope,
     label: "Email",
     url: "mailto:contato@jonatanlins.com",
+    target: "_blank",
   },
 ];
 
@@ -80,7 +93,7 @@ function Page({ theme }) {
         <H2 light>Desenvolvedor de sites e Aplicativos</H2>
         <H1 light>Jonatan Lins</H1>
 
-        <Button primary onClick={goToContactSection}>
+        <Button primary type="button" onClick={goToContactSection}>
           Entre em contato
         </Button>
       </FirstSection>
@@ -110,7 +123,7 @@ function Page({ theme }) {
 
         <Row>
           <div>
-            <DeviceFrame screen={destakCaruaruImage01} device="galaxyA30" />
+            <DeviceFrame device="galaxyA30" image={destakCaruaruImage01} />
           </div>
 
           <div>
@@ -149,11 +162,7 @@ function Page({ theme }) {
         <H3>Entre em contato</H3>
 
         <ContactGrid>
-          <ButtonGroup
-            buttons={socialMediaButtons}
-            className="buttonGroup"
-            target="_blank"
-          />
+          <ButtonGroup buttons={socialMediaButtons} className="buttonGroup" />
 
           <Card>
             <Form onSubmit={handleContactSubmit}>
@@ -167,9 +176,7 @@ function Page({ theme }) {
               />
               <TextInput label="Sua mensagem" {...text("message")} multiline />
 
-              <Button type="center" className="center">
-                Entre em contato
-              </Button>
+              <Button className="center">Entre em contato</Button>
             </Form>
           </Card>
         </ContactGrid>

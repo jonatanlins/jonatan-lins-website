@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-function Component({ children, type, onClick, icon: Icon }) {
+export type Props = {
+  icon: React.ComponentType;
+} & React.PropsWithoutRef<JSX.IntrinsicElements["button"]>;
+
+function Component({ icon: Icon, ...otherProps }: Props): JSX.Element {
   return (
-    <Button type={type} onClick={onClick}>
+    <Button {...otherProps}>
       <Details>
         <Icon />
       </Details>

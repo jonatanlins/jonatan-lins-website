@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import cn from "classnames";
 
-function Component({ children, primary, type = "button", onClick, className }) {
+export type Props = {
+  primary?: boolean;
+} & React.PropsWithoutRef<JSX.IntrinsicElements["button"]>;
+
+function Component({ children, primary, ...otherProps }: Props): JSX.Element {
   return (
-    <Button
-      className={cn(className, { primary })}
-      type={type}
-      onClick={onClick}
-    >
+    <Button {...otherProps} className={cn(otherProps.className, { primary })}>
       <OuterContainer>
         <InnerContainer>{children}</InnerContainer>
       </OuterContainer>

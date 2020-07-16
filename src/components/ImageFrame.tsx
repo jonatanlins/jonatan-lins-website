@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-function Component({ src }) {
+export type Props = {
+  src: string;
+};
+
+function Component({ src }: Props): JSX.Element {
   return (
     <Container>
       <Image src={src} />
@@ -14,8 +18,6 @@ const Container = styled.div`
   position: relative;
   border: 1px solid ${(props) => props.theme.colors.contrast};
   box-sizing: border-box;
-  background: url(${(props) => props.image}) center no-repeat;
-  background-size: cover;
   max-width: 100%;
   user-select: none;
 

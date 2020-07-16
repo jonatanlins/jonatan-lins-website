@@ -1,6 +1,27 @@
 import React from "react";
 
-const devices = {
+export type DeviceType = "iphoneX" | "galaxyA30";
+
+export type Device = {
+  width: number;
+  height: number;
+  screenDimensions: {
+    x: number;
+    y: number;
+    width: number;
+  };
+  frame: string;
+  screen: string;
+  details: string;
+  sideButton: string;
+};
+
+export type Props = {
+  image: any;
+  device: DeviceType;
+};
+
+const devices: Record<DeviceType, Device> = {
   iphoneX: {
     width: 257,
     height: 521,
@@ -73,7 +94,7 @@ const devices = {
   },
 };
 
-function Component({ screen, device }) {
+function Component({ device, image }: Props): JSX.Element {
   const deviceData = devices[device] || devices.iphoneX;
 
   return (
@@ -93,7 +114,7 @@ function Component({ screen, device }) {
       <image
         {...deviceData.screenDimensions}
         style={{ clipPath: "url(#screenFormat)" }}
-        href={screen}
+        href={image}
       />
 
       <path

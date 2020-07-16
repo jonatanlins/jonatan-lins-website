@@ -1,7 +1,9 @@
-const theme = {
+import { DefaultTheme } from "styled-components";
+
+const theme: DefaultTheme = {
   colors: {
     primary: "#0f1923",
-    secondary: "#f74656", // original: #ff4655
+    secondary: "#ff4655",
     accent: "#111111",
     contrast: "#ece8e1",
   },
