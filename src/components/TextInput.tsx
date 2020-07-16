@@ -2,29 +2,18 @@ import React from "react";
 import styled, { css } from "styled-components";
 import cn from "classnames";
 
-function Component({
-  type,
-  ref,
-  name,
-  value,
-  onChange,
-  label,
-  multiline,
-  className,
-  required,
-}) {
-  const InputComponent = multiline ? MultilineInput : Input;
+export type Props = {
+  label?: string;
+  multiline?: boolean;
+} & React.PropsWithoutRef<JSX.IntrinsicElements["input"]>;
+
+function Component(props: Props): JSX.Element {
+  const { label, multiline, className, ...otherProps } = props;
+  const InputComponent: React.ElementType = multiline ? MultilineInput : Input;
 
   return (
-    <Container className={cn(className, { active: value })}>
-      <InputComponent
-        type={type}
-        ref={ref}
-        name={name}
-        value={value}
-        onChange={onChange}
-        required={required}
-      />
+    <Container className={cn(className, { active: otherProps.value })}>
+      <InputComponent {...otherProps} />
       <Label>{label}</Label>
     </Container>
   );

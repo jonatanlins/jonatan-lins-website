@@ -1,6 +1,11 @@
 import styled, { css } from "styled-components";
 
-const textMixin = css`
+export type Props = {
+  light?: boolean;
+  dark?: boolean;
+};
+
+const textMixin = css<Props>`
   color: ${(props) =>
     props.light
       ? props.theme.colors.contrast
@@ -12,7 +17,7 @@ const textMixin = css`
   margin: 0;
 `;
 
-export const H1 = styled.h1`
+export const H1 = styled.h1<Props>`
   ${textMixin}
   font-family: Valorant, arial, georgia, sans-serif;
   font-size: 4em;
@@ -28,7 +33,7 @@ export const H1 = styled.h1`
   }
 `;
 
-export const H2 = styled.h2`
+export const H2 = styled.h2<Props>`
   ${textMixin}
   font-family: Valorant, arial, georgia, sans-serif;
   font-size: 1.125em;
@@ -40,7 +45,7 @@ export const H2 = styled.h2`
   }
 `;
 
-export const H3 = styled.h3`
+export const H3 = styled.h3<Props>`
   ${textMixin}
   font-family: Tungsten-Bold, arial, georgia, sans-serif;
   font-size: 3.5em;
@@ -55,21 +60,21 @@ export const H3 = styled.h3`
   }
 `;
 
-export const H4 = styled.h4`
+export const H4 = styled.h4<Props>`
   ${textMixin}
   font-family: DINNextW05-Bold, arial, georgia, sans-serif;
   font-size: 1.5em;
 `;
 
-export const H5 = styled.h5`
+export const H5 = styled.h5<Props>`
   ${textMixin}
 `;
 
-export const H6 = styled.h6`
+export const H6 = styled.h6<Props>`
   ${textMixin}
 `;
 
-export const P = styled.p`
+export const P = styled.p<Props>`
   ${textMixin}
   font-family: DINNextW1G, arial, georgia, sans-serif;
   font-size: 1.25em;

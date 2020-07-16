@@ -1,7 +1,10 @@
-import React from "react";
 import styled from "styled-components";
 
-const Section = styled.section`
+export type SectionProps = {
+  background: string;
+};
+
+const Section = styled.section<SectionProps>`
   padding: 6em 1em;
   box-sizing: border-box;
   position: relative;

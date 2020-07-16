@@ -1,16 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import Scrollspy from "react-scrollspy";
 
-function Component({ links }) {
+export type Link = {
+  url: string;
+  label?: string;
+  image?: any;
+};
+
+export type Props = {
+  links: Link[];
+};
+
+function Component({ links }: Props): JSX.Element {
   return (
     <Container>
-      <Scrollspy
-        items={links.map((link) => link.sectionId)}
-        currentClassName="active"
-        componentTag={"nav"}
-        offset={-80}
-      >
+      <NavBar>
         {links?.map((link) => (
           <Button key={link.url} href={link.url}>
             {link.image ? (
@@ -20,7 +24,7 @@ function Component({ links }) {
             )}
           </Button>
         ))}
-      </Scrollspy>
+      </NavBar>
     </Container>
   );
 }
@@ -35,12 +39,12 @@ const Container = styled.header`
   height: 5em;
   background-color: ${(props) => props.theme.colors.accent};
   border-bottom: 2px solid #33333340;
+`;
 
-  nav {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-  }
+const NavBar = styled.nav`
+  height: 100%;
+  display: flex;
+  justify-content: center;
 `;
 
 const Button = styled.a`
