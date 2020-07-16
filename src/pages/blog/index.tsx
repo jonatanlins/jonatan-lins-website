@@ -1,6 +1,6 @@
 import BlogLayout from "../../layouts/Blog";
 
-function Page() {
+function Page(): JSX.Element {
   return <BlogLayout>Blog</BlogLayout>;
 }
 
