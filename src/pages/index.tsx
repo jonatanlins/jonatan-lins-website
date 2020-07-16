@@ -64,8 +64,8 @@ const socialMediaButtons = [
   },
 ];
 
-function Page({ theme }) {
-  const [formState, { text, email }] = useFormState();
+function Page(): JSX.Element {
+  const [formState, { text }] = useFormState();
 
   function handleContactSubmit(event) {
     event.preventDefault();
@@ -98,7 +98,7 @@ function Page({ theme }) {
         </Button>
       </FirstSection>
 
-      <a name="about" />
+      <a id="about" />
       <Section id="section-about" background="contrast">
         <H3>Sobre mim</H3>
         <P>
@@ -117,7 +117,7 @@ function Page({ theme }) {
         </P>
       </Section>
 
-      <a name="projects" />
+      <a id="projects" />
       <Section id="section-projects" background="secondary">
         <H3>Meus projetos</H3>
 
@@ -157,7 +157,7 @@ function Page({ theme }) {
         </Row>
       </Section>
 
-      <a name="contact" />
+      <a id="contact" />
       <Section id="section-contact" background="contrast">
         <H3>Entre em contato</H3>
 
