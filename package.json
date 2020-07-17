@@ -9,6 +9,17 @@
     "static": "next export",
     "storybook": "start-storybook"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "./node_modules/.bin/eslint --fix",
+      "git add"
+    ]
+  },
   "dependencies": {
     "@types/minimatch": "^3.0.3",
     "@types/node": "^14.0.23",
@@ -56,6 +67,7 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.3",
+    "lint-staged": "^10.2.11",
     "prettier": "^2.0.5"
   }
 }
