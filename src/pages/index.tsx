@@ -6,7 +6,7 @@ import {
   FaPhone,
   FaEnvelope,
 } from "react-icons/fa";
-import { useFormState } from "react-use-form-state";
+import { useForm } from "react-hook-form";
 import api from "../services/api";
 
 import LandingPageLayout from "../layouts/LandingPage";
@@ -24,6 +24,12 @@ import { P, H1, H2, H3, H4 } from "../components/Typography";
 
 import logo from "../assets/images/brand/contrast.svg";
 import destakCaruaruImage01 from "../assets/images/projects/destak-screenshot-01.jpg";
+
+type ContactFormData = {
+  name: string;
+  contact: string;
+  message: string;
+};
 
 const headerLinks: PageHeaderProps["links"] = [
   { label: "Início", url: "/#", image: logo },
@@ -67,18 +73,10 @@ const socialMediaButtons: ButtonGroupProps["buttons"] = [
 ];
 
 function Page(): JSX.Element {
-  const [formState, { text }] = useFormState();
+  const { register, handleSubmit, errors } = useForm<ContactFormData>();
 
-  function handleContactSubmit(event) {
-    event.preventDefault();
-
-    const data = {
-      name: formState.values.name,
-      contact: formState.values.contact,
-      message: formState.values.message,
-    };
-
-    api.post(`contacts`, data).then((response) => {
+  function handleContactSubmit(data: ContactFormData) {
+    api.post(`contacts`, data).then(() => {
       alert("Mensagem enviada com sucesso! Farei contato em breve.");
     });
   }
@@ -167,16 +165,28 @@ function Page(): JSX.Element {
           <ButtonGroup buttons={socialMediaButtons} className="buttonGroup" />
 
           <Card>
-            <Form onSubmit={handleContactSubmit}>
+            <Form onSubmit={handleSubmit(handleContactSubmit)}>
               <H4>Escreva uma mensagem</H4>
 
-              <TextInput label="Seu nome" {...text("name")} required />
               <TextInput
-                label="Seu telefone ou email"
-                {...text("contact")}
-                required
+                name="name"
+                label="Seu nome"
+                ref={register({ required: true })}
+                error={errors.name && "Preencha este campo"}
               />
-              <TextInput label="Sua mensagem" {...text("message")} multiline />
+              <TextInput
+                name="contact"
+                label="Seu telefone ou email"
+                ref={register({ required: true })}
+                error={errors.contact && "Preencha este campo"}
+              />
+              <TextInput
+                name="message"
+                label="Sua mensagem"
+                multiline
+                ref={register({ required: true })}
+                error={errors.message && "Preencha este campo"}
+              />
 
               <Button className="center">Entre em contato</Button>
             </Form>
@@ -185,12 +195,11 @@ function Page(): JSX.Element {
       </Section>
 
       <PageFooter>
-        <P>Feito com ❤️</P>
-
         <P>
-          Inspirado no site do&nbsp;
+          Feito com ❤️ por Jonatan, e inspirado no estilo visual do&nbsp;
           <a href="https://playvalorant.com/pt-br">Valorant</a>
-          <br />
+        </P>
+        <P>
           Este site é open source, acesse o código&nbsp;
           <a href="https://github.com/jonatanlins/jonatan-lins-website">
             clicando aqui

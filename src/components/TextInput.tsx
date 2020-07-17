@@ -1,23 +1,27 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import cn from "classnames";
 
-export type Props = {
+export type Ref = HTMLInputElement | HTMLTextAreaElement;
+
+export type Props = React.PropsWithoutRef<JSX.IntrinsicElements["input"]> & {
   label?: string;
   multiline?: boolean;
-} & React.PropsWithoutRef<JSX.IntrinsicElements["input"]>;
+  className?: string;
+  error?: string;
+};
 
-function Component(props: Props): JSX.Element {
-  const { label, multiline, className, ...otherProps } = props;
+const Component = React.forwardRef<Ref, Props>((props, ref) => {
+  const { label, multiline, className, error, ...inputProps } = props;
   const InputComponent: React.ElementType = multiline ? MultilineInput : Input;
 
   return (
-    <Container className={cn(className, { active: otherProps.value })}>
-      <InputComponent {...otherProps} />
+    <Container className={className}>
+      <InputComponent ref={ref} {...inputProps} />
       <Label>{label}</Label>
+      {error && <Error>{error}</Error>}
     </Container>
   );
-}
+});
 
 const Container = styled.label`
   display: block;
@@ -53,16 +57,15 @@ const Label = styled.span`
   z-index: 2;
   user-select: none;
   left: 23px;
-  font-size: 1em;
-  top: 23px;
   color: ${(props) => props.theme.colors.primary};
   transition: all 0.2s ease;
+  top: 12px;
+  font-size: 0.75em;
+  opacity: 0.9;
+`;
 
-  label.active & {
-    top: 12px;
-    font-size: 0.75em;
-    opacity: 0.9;
-  }
+const Error = styled.p`
+  margin: 6px 0 0;
 `;
 
 const inputMixin = css`
@@ -73,16 +76,13 @@ const inputMixin = css`
   z-index: 1;
   width: 100%;
   outline: none;
-  padding: 16px 1em 19px;
+  padding: 21px 1em 8px;
+  line-height: 1.618;
   box-sizing: border-box;
   background-color: ${(props) => props.theme.colors.contrast};
   color: ${(props) => props.theme.colors.primary};
   transition: all 0.2s ease;
   display: block;
-
-  label.active & {
-    padding: 23px 1em 12px;
-  }
 `;
 
 const Input = styled.input`
