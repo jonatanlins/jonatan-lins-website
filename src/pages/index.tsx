@@ -15,22 +15,24 @@ import Card from "../components/Card";
 import TextInput from "../components/TextInput";
 import DeviceFrame from "../components/DeviceFrame";
 import Section from "../components/Section";
-import ButtonGroup from "../components/ButtonGroup";
-import PageHeader from "../components/PageHeader";
+import ButtonGroup, {
+  Props as ButtonGroupProps,
+} from "../components/ButtonGroup";
+import PageHeader, { Props as PageHeaderProps } from "../components/PageHeader";
 import PageFooter from "../components/PageFooter";
 import { P, H1, H2, H3, H4 } from "../components/Typography";
 
 import logo from "../assets/images/brand/contrast.svg";
 import destakCaruaruImage01 from "../assets/images/projects/destak-screenshot-01.jpg";
 
-const headerLinks = [
-  { label: "Início", url: "/#", sectionId: "section-header", image: logo },
-  { label: "Sobre", url: "/#about", sectionId: "section-about" },
-  { label: "Projetos", url: "/#projects", sectionId: "section-projects" },
-  { label: "Contato", url: "/#contact", sectionId: "section-contact" },
+const headerLinks: PageHeaderProps["links"] = [
+  { label: "Início", url: "/#", image: logo },
+  { label: "Sobre", url: "/#about" },
+  { label: "Projetos", url: "/#projects" },
+  { label: "Contato", url: "/#contact" },
 ];
 
-const socialMediaButtons = [
+const socialMediaButtons: ButtonGroupProps["buttons"] = [
   {
     icon: FaInstagram,
     label: "Instagram",

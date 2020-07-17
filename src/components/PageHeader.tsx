@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-export type Link = {
+export type LinkType = {
   url: string;
   label?: string;
   image?: any;
 };
 
 export type Props = {
-  links: Link[];
+  links: LinkType[];
 };
 
 function Component({ links }: Props): JSX.Element {
