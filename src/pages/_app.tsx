@@ -1,10 +1,11 @@
+import React from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 import theme from "../style/theme";
-import "../style/global.css";
-import "../style/fonts.css";
-import bannerImage from "../assets/images/brand/banner.png";
+import "~/style/global.css";
+import "~/style/fonts.css";
+import bannerImage from "~/assets/images/brand/banner.png";
 
 const title = "Jonatan Lins";
 const description = "Meu site pessoal, blog e portfólio";

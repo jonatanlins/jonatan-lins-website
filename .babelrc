@@ -1,4 +1,16 @@
 {
-  "plugins": [["styled-components", { "preprocess": false }]],
-  "presets": ["next/babel"]
+  "presets": ["next/babel"],
+  "plugins": [
+    ["styled-components", { "preprocess": false }],
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "~": "./src",
+          "@public": "./public"
+        }
+      }
+    ]
+  ]
 }

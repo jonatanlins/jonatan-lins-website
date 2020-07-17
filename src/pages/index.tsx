@@ -1,3 +1,4 @@
+import React from "react";
 import styled, { withTheme } from "styled-components";
 import {
   FaInstagram,
@@ -7,23 +8,23 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import { useForm } from "react-hook-form";
-import api from "../services/api";
+import api from "~/services/api";
 
-import LandingPageLayout from "../layouts/LandingPage";
-import Button from "../components/Button";
-import Card from "../components/Card";
-import TextInput from "../components/TextInput";
-import DeviceFrame from "../components/DeviceFrame";
-import Section from "../components/Section";
+import LandingPageLayout from "~/layouts/LandingPage";
+import Button from "~/components/Button";
+import Card from "~/components/Card";
+import TextInput from "~/components/TextInput";
+import DeviceFrame from "~/components/DeviceFrame";
+import Section from "~/components/Section";
 import ButtonGroup, {
   Props as ButtonGroupProps,
-} from "../components/ButtonGroup";
-import PageHeader, { Props as PageHeaderProps } from "../components/PageHeader";
-import PageFooter from "../components/PageFooter";
-import { P, H1, H2, H3, H4 } from "../components/Typography";
+} from "~/components/ButtonGroup";
+import PageHeader, { Props as PageHeaderProps } from "~/components/PageHeader";
+import PageFooter from "~/components/PageFooter";
+import { P, H1, H2, H3, H4 } from "~/components/Typography";
 
-import logo from "../assets/images/brand/contrast.svg";
-import destakCaruaruImage01 from "../assets/images/projects/destak-screenshot-01.jpg";
+import logo from "~/assets/images/brand/contrast.svg";
+import destakCaruaruImage01 from "~/assets/images/projects/destak-screenshot-01.jpg";
 
 type ContactFormData = {
   name: string;
