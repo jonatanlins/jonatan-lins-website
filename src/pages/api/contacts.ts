@@ -1,5 +1,5 @@
 import axios from "axios";
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest as Request, NextApiResponse as Response } from "next";
 
 export type MessageData = {
   name?: string;
@@ -8,7 +8,7 @@ export type MessageData = {
 };
 
 const apiKey: string = process.env.TELEGRAM_API_KEY;
-const chat_id: string = process.env.TELEGRAM_ADMIN_ID;
+const chatId: string = process.env.TELEGRAM_ADMIN_ID;
 
 function createMessageText(data: MessageData): string {
   return `
@@ -21,14 +21,14 @@ ${data.message}
 `;
 }
 
-async function controller(request: NextApiRequest, response: NextApiResponse) {
+async function controller(request: Request, response: Response): Promise<void> {
   if (request.method === "POST") {
     const data: MessageData = request.body;
 
     const text: string = createMessageText(data);
 
     await axios.get(`https://api.telegram.org/bot${apiKey}/sendMessage`, {
-      params: { chat_id, text },
+      params: { chat_id: chatId, text },
     });
 
     response.status(200).json(data);

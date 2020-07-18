@@ -13,17 +13,17 @@ export type Props = {
   className?: string;
 };
 
-function Component(props: Props): JSX.Element {
+function Component({ buttons, className }: Props): JSX.Element {
   return (
-    <Container className={props.className}>
-      {props.buttons.map(({ icon: Icon, label, url, target }) => {
+    <Container className={className}>
+      {buttons.map(({ icon: Icon, label, url, target }) => {
         return (
           <Button
             key={url}
             href={url}
             title={label}
             target={target}
-            rel="noopener"
+            rel={target === "_blank" ? "noopener" : undefined}
           >
             <Icon />
           </Button>

@@ -5,10 +5,10 @@ export type Props = {
   children: React.ReactNode;
 };
 
-function Component(props: Props): JSX.Element {
+function Component({ children }: Props): JSX.Element {
   return (
     <OuterContainer>
-      <InnerContainer>{props.children}</InnerContainer>
+      <InnerContainer>{children}</InnerContainer>
     </OuterContainer>
   );
 }

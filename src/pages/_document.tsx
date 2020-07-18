@@ -1,15 +1,18 @@
-import React from "react";
 import Document, {
   DocumentContext,
   Html,
   Head,
   Main,
   NextScript,
+  DocumentInitialProps,
 } from "next/document";
+import React from "react";
 import { ServerStyleSheet } from "styled-components";
 
-export default class CustomDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
+class CustomDocument extends Document {
+  static async getInitialProps(
+    ctx: DocumentContext
+  ): Promise<DocumentInitialProps> {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
@@ -35,7 +38,7 @@ export default class CustomDocument extends Document {
     }
   }
 
-  render() {
+  render(): JSX.Element {
     return (
       <Html lang="pt-BR">
         <Head />
@@ -47,3 +50,5 @@ export default class CustomDocument extends Document {
     );
   }
 }
+
+export default CustomDocument;

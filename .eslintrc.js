@@ -12,7 +12,12 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ["@typescript-eslint", "react", "prettier"],
+  plugins: [
+    "@typescript-eslint",
+    "react",
+    "prettier",
+    "eslint-plugin-import-helpers",
+  ],
   extends: [
     "airbnb",
     "plugin:@typescript-eslint/recommended",
@@ -29,6 +34,19 @@ module.exports = {
     "import/extensions": "off",
     "react/prop-types": "off",
     "react/jsx-props-no-spreading": ["error", { custom: "ignore" }],
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        newlinesBetween: "always",
+        groups: [
+          "module",
+          ["/^~/services/", "/^~/utils/", "/^~/layouts/"],
+          "/^~/components/",
+          ["parent", "sibling", "index", "/^~/"],
+        ],
+        alphabetize: { order: "asc", ignoreCase: true },
+      },
+    ],
     "prettier/prettier": [
       "error",
       {

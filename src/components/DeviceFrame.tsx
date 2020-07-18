@@ -17,7 +17,7 @@ export type Device = {
 };
 
 export type Props = {
-  image: any;
+  image: string;
   device: DeviceType;
 };
 
@@ -96,6 +96,7 @@ const devices: Record<DeviceType, Device> = {
 
 function Component({ device, image }: Props): JSX.Element {
   const deviceData = devices[device] || devices.iphoneX;
+  const { screenDimensions } = deviceData;
 
   return (
     <svg
@@ -112,7 +113,9 @@ function Component({ device, image }: Props): JSX.Element {
       <path fill="none" stroke="#FFFFFF" strokeWidth="1" d={deviceData.frame} />
 
       <image
-        {...deviceData.screenDimensions}
+        x={screenDimensions.x}
+        y={screenDimensions.y}
+        width={screenDimensions.width}
         style={{ clipPath: "url(#screenFormat)" }}
         href={image}
       />

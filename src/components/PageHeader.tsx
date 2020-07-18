@@ -4,7 +4,7 @@ import styled from "styled-components";
 export type LinkType = {
   url: string;
   label?: string;
-  image?: any;
+  image?: string;
 };
 
 export type Props = {

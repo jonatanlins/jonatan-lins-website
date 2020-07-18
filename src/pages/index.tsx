@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { withTheme } from "styled-components";
+import { useForm } from "react-hook-form";
 import {
   FaInstagram,
   FaWhatsapp,
@@ -7,20 +7,21 @@ import {
   FaPhone,
   FaEnvelope,
 } from "react-icons/fa";
-import { useForm } from "react-hook-form";
-import api from "~/services/api";
+import styled, { withTheme } from "styled-components";
 
 import LandingPageLayout from "~/layouts/LandingPage";
+import api from "~/services/api";
+
 import Button from "~/components/Button";
-import Card from "~/components/Card";
-import TextInput from "~/components/TextInput";
-import DeviceFrame from "~/components/DeviceFrame";
-import Section from "~/components/Section";
 import ButtonGroup, {
   Props as ButtonGroupProps,
 } from "~/components/ButtonGroup";
-import PageHeader, { Props as PageHeaderProps } from "~/components/PageHeader";
+import Card from "~/components/Card";
+import DeviceFrame from "~/components/DeviceFrame";
 import PageFooter from "~/components/PageFooter";
+import PageHeader, { Props as PageHeaderProps } from "~/components/PageHeader";
+import Section from "~/components/Section";
+import TextInput from "~/components/TextInput";
 import { P, H1, H2, H3, H4 } from "~/components/Typography";
 
 import logo from "~/assets/images/brand/contrast.svg";
@@ -78,6 +79,7 @@ function Page(): JSX.Element {
 
   function handleContactSubmit(data: ContactFormData) {
     api.post(`contacts`, data).then(() => {
+      // eslint-disable-next-line no-alert
       alert("Mensagem enviada com sucesso! Farei contato em breve.");
     });
   }
@@ -99,9 +101,10 @@ function Page(): JSX.Element {
         </Button>
       </FirstSection>
 
-      <a id="about" />
       <Section id="section-about" background="contrast">
+        <Anchor id="about" />
         <H3>Sobre mim</H3>
+
         <P>
           Desenvolvedor de sites e aplicativos, metido a designer de interfaces,
           amante de tecnologia, estudante de Sistemas de Informação na{" "}
@@ -118,8 +121,8 @@ function Page(): JSX.Element {
         </P>
       </Section>
 
-      <a id="projects" />
       <Section id="section-projects" background="secondary">
+        <Anchor id="projects" />
         <H3>Meus projetos</H3>
 
         <Row>
@@ -134,10 +137,13 @@ function Page(): JSX.Element {
               locais e estabelecimentos para tornar sua visita a Caruaru
               inesquecível.
             </P>
-
-            <a href="http://onelink.to/b3ktsx" target="_blank" rel="noopener">
-              <Button>Veja o app</Button>
-            </a>
+            <Button
+              href="http://onelink.to/b3ktsx"
+              externalLink
+              target="_blank"
+            >
+              Veja o app
+            </Button>
           </div>
 
           {/* <div>
@@ -158,8 +164,8 @@ function Page(): JSX.Element {
         </Row>
       </Section>
 
-      <a id="contact" />
       <Section id="section-contact" background="contrast">
+        <Anchor id="contact" />
         <H3>Entre em contato</H3>
 
         <ContactGrid>
@@ -210,6 +216,12 @@ function Page(): JSX.Element {
     </LandingPageLayout>
   );
 }
+
+const Anchor = styled.a`
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
 
 const Form = styled.form`
   display: grid;

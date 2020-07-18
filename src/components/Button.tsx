@@ -1,14 +1,48 @@
+import cn from "classnames";
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
-import cn from "classnames";
 
-export type Props = {
-  primary?: boolean;
-} & React.PropsWithoutRef<JSX.IntrinsicElements["button"]>;
+export type Props = React.PropsWithoutRef<JSX.IntrinsicElements["button"]> &
+  React.PropsWithoutRef<JSX.IntrinsicElements["a"]> & {
+    primary?: boolean;
+    externalLink?: boolean;
+  };
 
-function Component({ children, primary, ...otherProps }: Props): JSX.Element {
+function Component(props: Props): JSX.Element {
+  const { children, primary, href, externalLink, ...otherProps } = props;
+  const className: string = cn(otherProps.className, { primary });
+
+  if (externalLink) {
+    return (
+      <Button
+        {...otherProps}
+        className={className}
+        as="a"
+        href={href}
+        rel="noopener noreferrer"
+      >
+        <OuterContainer>
+          <InnerContainer>{children}</InnerContainer>
+        </OuterContainer>
+      </Button>
+    );
+  }
+
+  if (href) {
+    return (
+      <Link href={href} passHref>
+        <Button {...otherProps} className={className} as="a">
+          <OuterContainer>
+            <InnerContainer>{children}</InnerContainer>
+          </OuterContainer>
+        </Button>
+      </Link>
+    );
+  }
+
   return (
-    <Button {...otherProps} className={cn(otherProps.className, { primary })}>
+    <Button {...otherProps} className={className}>
       <OuterContainer>
         <InnerContainer>{children}</InnerContainer>
       </OuterContainer>
@@ -28,6 +62,8 @@ const Button = styled.button`
   margin: 8px 0;
   font-family: inherit;
   outline: none;
+  display: inline-block;
+  text-decoration: none;
 
   &:before,
   &:after {
