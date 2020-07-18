@@ -1,5 +1,6 @@
 import React from "react";
 
+export type ImgType = string | { toString(): string; src: string };
 export type DeviceType = "iphoneX" | "galaxyA30";
 
 export type Device = {
@@ -17,7 +18,7 @@ export type Device = {
 };
 
 export type Props = {
-  image: string;
+  image: ImgType;
   device: DeviceType;
 };
 
@@ -117,7 +118,7 @@ function Component({ device, image }: Props): JSX.Element {
         y={screenDimensions.y}
         width={screenDimensions.width}
         style={{ clipPath: "url(#screenFormat)" }}
-        href={image}
+        href={image as string}
       />
 
       <path

@@ -25,7 +25,7 @@ import TextInput from "~/components/TextInput";
 import { P, H1, H2, H3, H4 } from "~/components/Typography";
 
 import logo from "~/assets/images/brand/contrast.svg";
-import destakCaruaruImage01 from "~/assets/images/projects/destak-screenshot-01.jpg";
+import destakCaruaruImage01 from "~/assets/images/projects/destak-screenshot-01.jpg?webp";
 
 type ContactFormData = {
   name: string;

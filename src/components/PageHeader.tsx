@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
+export type ImgType = string | { toString(): string; src: string };
 export type LinkType = {
   url: string;
   label?: string;
-  image?: string;
+  image?: ImgType;
 };
 
 export type Props = {
@@ -18,7 +19,7 @@ function Component({ links }: Props): JSX.Element {
         {links?.map((link) => (
           <Button key={link.url} href={link.url}>
             {link.image ? (
-              <img src={link.image} alt={link.label} />
+              <img src={link.image as string} alt={link.label} />
             ) : (
               link.label
             )}
