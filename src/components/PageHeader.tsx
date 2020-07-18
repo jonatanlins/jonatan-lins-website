@@ -12,25 +12,25 @@ export type Props = {
   links: LinkType[];
 };
 
-function Component({ links }: Props): JSX.Element {
+function PageHeader({ links }: Props): JSX.Element {
   return (
-    <Container>
-      <NavBar>
+    <StyledContainer>
+      <StyledNavBar>
         {links?.map((link) => (
-          <Button key={link.url} href={link.url}>
+          <StyledButton key={link.url} href={link.url}>
             {link.image ? (
               <img src={link.image as string} alt={link.label} />
             ) : (
               link.label
             )}
-          </Button>
+          </StyledButton>
         ))}
-      </NavBar>
-    </Container>
+      </StyledNavBar>
+    </StyledContainer>
   );
 }
 
-const Container = styled.header`
+const StyledContainer = styled.header`
   position: fixed;
   z-index: 100;
   box-sizing: border-box;
@@ -42,13 +42,13 @@ const Container = styled.header`
   border-bottom: 2px solid #33333340;
 `;
 
-const NavBar = styled.nav`
+const StyledNavBar = styled.nav`
   height: 100%;
   display: flex;
   justify-content: center;
 `;
 
-const Button = styled.a`
+const StyledButton = styled.a`
   padding: 2px 12px 0;
   border-bottom: 2px solid transparent;
   margin: 0 7px -2px;
@@ -72,4 +72,4 @@ const Button = styled.a`
   }
 `;
 
-export default Component;
+export default PageHeader;

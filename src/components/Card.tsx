@@ -5,15 +5,15 @@ export type Props = {
   children: React.ReactNode;
 };
 
-function Component({ children }: Props): JSX.Element {
+function Card({ children }: Props): JSX.Element {
   return (
-    <OuterContainer>
-      <InnerContainer>{children}</InnerContainer>
-    </OuterContainer>
+    <StyledOuterContainer>
+      <StyledInnerContainer>{children}</StyledInnerContainer>
+    </StyledOuterContainer>
   );
 }
 
-const OuterContainer = styled.div`
+const StyledOuterContainer = styled.div`
   padding: 1em 0;
   position: relative;
   color: ${(props) => props.theme.colors.contrast};
@@ -31,7 +31,7 @@ const OuterContainer = styled.div`
   }
 `;
 
-const InnerContainer = styled.div`
+const StyledInnerContainer = styled.div`
   background-color: ${(props) => props.theme.colors.primary};
   padding: 1em 1.5em;
 
@@ -60,4 +60,4 @@ const InnerContainer = styled.div`
   }
 `;
 
-export default Component;
+export default Card;

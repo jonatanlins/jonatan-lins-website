@@ -93,8 +93,8 @@ function Page(): JSX.Element {
       <PageHeader links={headerLinks} />
 
       <FirstSection id="section-header" background="accent">
-        <H2 light>Desenvolvedor de sites e Aplicativos</H2>
-        <H1 light>Jonatan Lins</H1>
+        <H2>Desenvolvedor de sites e Aplicativos</H2>
+        <H1>Jonatan Lins</H1>
 
         <Button primary type="button" onClick={goToContactSection}>
           Entre em contato

@@ -4,7 +4,7 @@ export type SectionProps = {
   background: string;
 };
 
-const Section = styled.section<SectionProps>`
+const StyledSection = styled.section<SectionProps>`
   padding: 6em 1em;
   box-sizing: border-box;
   position: relative;
@@ -49,4 +49,4 @@ const Section = styled.section<SectionProps>`
   }
 `;
 
-export default Section;
+export default StyledSection;

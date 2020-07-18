@@ -5,15 +5,15 @@ export type Props = {
   src: string;
 };
 
-function Component({ src }: Props): JSX.Element {
+function ImageFrame({ src }: Props): JSX.Element {
   return (
-    <Container>
-      <Image src={src} />
-    </Container>
+    <StyledContainer>
+      <StyledImage src={src} />
+    </StyledContainer>
   );
 }
 
-const Container = styled.div`
+const StyledContainer = styled.div`
   display: inline-block;
   position: relative;
   border: 1px solid ${(props) => props.theme.colors.contrast};
@@ -43,9 +43,9 @@ const Container = styled.div`
   }
 `;
 
-const Image = styled.img`
+const StyledImage = styled.img`
   width: 100%;
   display: block;
 `;
 
-export default Component;
+export default ImageFrame;

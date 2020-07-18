@@ -13,12 +13,12 @@ export type Props = {
   className?: string;
 };
 
-function Component({ buttons, className }: Props): JSX.Element {
+function ButtonGroup({ buttons, className }: Props): JSX.Element {
   return (
-    <Container className={className}>
+    <StyledContainer className={className}>
       {buttons.map(({ icon: Icon, label, url, target }) => {
         return (
-          <Button
+          <StyledButton
             key={url}
             href={url}
             title={label}
@@ -26,23 +26,23 @@ function Component({ buttons, className }: Props): JSX.Element {
             rel={target === "_blank" ? "noopener" : undefined}
           >
             <Icon />
-          </Button>
+          </StyledButton>
         );
       })}
-    </Container>
+    </StyledContainer>
   );
 }
 
-Component.defaultProps = {
+ButtonGroup.defaultProps = {
   buttons: [],
 };
 
-const Container = styled.div`
+const StyledContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
-const Button = styled.a`
+const StyledButton = styled.a`
   font-size: 1em;
   color: ${(props) => props.theme.colors.primary};
   display: flex;
@@ -57,4 +57,4 @@ const Button = styled.a`
   }
 `;
 
-export default Component;
+export default ButtonGroup;

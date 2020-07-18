@@ -5,17 +5,17 @@ export type Props = {
   icon: React.ComponentType;
 } & React.PropsWithoutRef<JSX.IntrinsicElements["button"]>;
 
-function Component({ icon: Icon, ...otherProps }: Props): JSX.Element {
+function IconButton({ icon: Icon, ...otherProps }: Props): JSX.Element {
   return (
-    <Button {...otherProps}>
-      <Details>
+    <StyledButton {...otherProps}>
+      <StyledDetails>
         <Icon />
-      </Details>
-    </Button>
+      </StyledDetails>
+    </StyledButton>
   );
 }
 
-const Button = styled.button`
+const StyledButton = styled.button`
   position: relative;
   cursor: pointer;
   outline: none;
@@ -48,7 +48,7 @@ const Button = styled.button`
   }
 `;
 
-const Details = styled.div`
+const StyledDetails = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,4 +75,4 @@ const Details = styled.div`
   }
 `;
 
-export default Component;
+export default IconButton;

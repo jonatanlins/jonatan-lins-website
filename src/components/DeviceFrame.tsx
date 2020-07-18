@@ -95,7 +95,7 @@ const devices: Record<DeviceType, Device> = {
   },
 };
 
-function Component({ device, image }: Props): JSX.Element {
+function DeviceFrame({ device, image }: Props): JSX.Element {
   const deviceData = devices[device] || devices.iphoneX;
   const { screenDimensions } = deviceData;
 
@@ -135,4 +135,4 @@ function Component({ device, image }: Props): JSX.Element {
   );
 }
 
-export default Component;
+export default DeviceFrame;

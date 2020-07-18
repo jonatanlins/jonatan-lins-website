@@ -9,48 +9,48 @@ export type Props = React.PropsWithoutRef<JSX.IntrinsicElements["button"]> &
     externalLink?: boolean;
   };
 
-function Component(props: Props): JSX.Element {
+function Button(props: Props): JSX.Element {
   const { children, primary, href, externalLink, ...otherProps } = props;
   const className: string = cn(otherProps.className, { primary });
 
   if (externalLink) {
     return (
-      <Button
+      <StyledButton
         {...otherProps}
         className={className}
         as="a"
         href={href}
         rel="noopener noreferrer"
       >
-        <OuterContainer>
-          <InnerContainer>{children}</InnerContainer>
-        </OuterContainer>
-      </Button>
+        <StyledOuterContainer>
+          <StyledInnerContainer>{children}</StyledInnerContainer>
+        </StyledOuterContainer>
+      </StyledButton>
     );
   }
 
   if (href) {
     return (
       <Link href={href} passHref>
-        <Button {...otherProps} className={className} as="a">
-          <OuterContainer>
-            <InnerContainer>{children}</InnerContainer>
-          </OuterContainer>
-        </Button>
+        <StyledButton {...otherProps} className={className} as="a">
+          <StyledOuterContainer>
+            <StyledInnerContainer>{children}</StyledInnerContainer>
+          </StyledOuterContainer>
+        </StyledButton>
       </Link>
     );
   }
 
   return (
-    <Button {...otherProps} className={className}>
-      <OuterContainer>
-        <InnerContainer>{children}</InnerContainer>
-      </OuterContainer>
-    </Button>
+    <StyledButton {...otherProps} className={className}>
+      <StyledOuterContainer>
+        <StyledInnerContainer>{children}</StyledInnerContainer>
+      </StyledOuterContainer>
+    </StyledButton>
   );
 }
 
-const Button = styled.button`
+const StyledButton = styled.button`
   height: 68px;
   background-color: transparent;
   border: none;
@@ -110,7 +110,7 @@ const Button = styled.button`
   }
 `;
 
-const OuterContainer = styled.div`
+const StyledOuterContainer = styled.div`
   background-color: ${(props) => props.theme.colors.contrast};
   color: ${(props) => props.theme.colors.primary};
   height: 100%;
@@ -158,9 +158,9 @@ const OuterContainer = styled.div`
   }
 `;
 
-const InnerContainer = styled.div`
+const StyledInnerContainer = styled.div`
   z-index: 1;
   user-select: none;
 `;
 
-export default Component;
+export default Button;
