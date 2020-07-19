@@ -111,7 +111,12 @@ function DeviceFrame({ device, image }: Props): JSX.Element {
         </clipPath>
       </defs>
 
-      <path fill="none" stroke="#FFFFFF" strokeWidth="1" d={deviceData.frame} />
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1"
+        d={deviceData.frame}
+      />
 
       <image
         x={screenDimensions.x}
@@ -123,14 +128,14 @@ function DeviceFrame({ device, image }: Props): JSX.Element {
 
       <path
         fill="none"
-        stroke="#FFFFFF"
+        stroke="currentColor"
         strokeWidth="1"
         strokeLinecap="round"
         strokeLinejoin="round"
         d={`${deviceData.screen}${deviceData.details}`}
       />
 
-      <path fill="#FFFFFF" d={deviceData.sideButton} />
+      <path fill="currentColor" d={deviceData.sideButton} />
     </svg>
   );
 }

@@ -1,15 +1,10 @@
 import "styled-components";
 
-interface Colors {
-  primary: string;
-  secondary: string;
-  accent: string;
-  contrast: string;
-}
+type Color = "primary" | "secondary" | "accent" | "contrast";
 
 declare module "styled-components" {
   export interface DefaultTheme {
-    colors: Colors;
-    contrastColors: Colors;
+    colors: Record<Color, string>;
+    contrastColors: Record<Color, string>;
   }
 }

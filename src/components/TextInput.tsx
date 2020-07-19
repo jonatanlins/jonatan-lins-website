@@ -2,15 +2,15 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-export interface Props<T> {
+export interface Props {
   label?: string;
-  multiline?: T;
+  multiline?: boolean;
   className?: string;
   error?: string;
 }
 
-export type InputProps = JSX.IntrinsicElements["input"] & Props<false>;
-export type TextAreaProps = JSX.IntrinsicElements["textarea"] & Props<false>;
+export type InputProps = JSX.IntrinsicElements["input"] & Props;
+export type TextAreaProps = JSX.IntrinsicElements["textarea"] & Props;
 export type Ref = HTMLInputElement | HTMLTextAreaElement;
 
 const Component = React.forwardRef<Ref, InputProps | TextAreaProps>(

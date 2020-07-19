@@ -39,6 +39,8 @@ export const H3 = styled.h3`
   ${textMixin}
   font-family: Tungsten-Bold, arial, georgia, sans-serif;
   font-size: 3.5em;
+  line-height: 1.5em;
+  margin: 0.2em 0;
   text-transform: uppercase;
 
   @media (min-width: 768px) {
@@ -53,7 +55,9 @@ export const H3 = styled.h3`
 export const H4 = styled.h4`
   ${textMixin}
   font-family: DINNextW05-Bold, arial, georgia, sans-serif;
-  font-size: 1.5em;
+  font-size: 2.5em;
+  line-height: 1.5;
+  margin: 0.5em 0;
 `;
 
 export const H5 = styled.h5`
@@ -69,6 +73,7 @@ export const P = styled.p`
   font-family: DINNextW1G, arial, georgia, sans-serif;
   font-size: 1.25em;
   margin: 1em 0;
+  opacity: 0.9;
 
   a {
     font-family: DINNextW05-Medium, arial, georgia, sans-serif;

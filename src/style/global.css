@@ -4,4 +4,11 @@ body {
   font-size: 16px;
   font-family: DINNextW05-Medium, arial, georgia, sans-serif;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }

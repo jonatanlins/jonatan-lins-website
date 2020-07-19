@@ -85,14 +85,18 @@ function Page(): JSX.Element {
   }
 
   function goToContactSection() {
-    window.open("#contact", "_self");
+    const input: HTMLInputElement = document.querySelector(
+      ".contact-form input"
+    );
+    // eslint-disable-next-line no-unused-expressions
+    input?.focus();
   }
 
   return (
     <LandingPageLayout>
       <PageHeader links={headerLinks} />
 
-      <FirstSection id="section-header" background="accent">
+      <FirstSection color="accent">
         <H2>Desenvolvedor de sites e Aplicativos</H2>
         <H1>Jonatan Lins</H1>
 
@@ -101,8 +105,7 @@ function Page(): JSX.Element {
         </Button>
       </FirstSection>
 
-      <Section id="section-about" background="contrast">
-        <Anchor id="about" />
+      <Section id="about" color="contrast" title="About me">
         <H3>Sobre mim</H3>
 
         <P>
@@ -121,8 +124,7 @@ function Page(): JSX.Element {
         </P>
       </Section>
 
-      <Section id="section-projects" background="secondary">
-        <Anchor id="projects" />
+      <Section id="projects" color="primary" title="My projects">
         <H3>Meus projetos</H3>
 
         <Row>
@@ -164,15 +166,17 @@ function Page(): JSX.Element {
         </Row>
       </Section>
 
-      <Section id="section-contact" background="contrast">
-        <Anchor id="contact" />
+      <Section id="contact" color="contrast" title="Contact">
         <H3>Entre em contato</H3>
 
         <ContactGrid>
           <ButtonGroup buttons={socialMediaButtons} className="buttonGroup" />
 
           <Card>
-            <Form onSubmit={handleSubmit(handleContactSubmit)}>
+            <Form
+              className="contact-form"
+              onSubmit={handleSubmit(handleContactSubmit)}
+            >
               <H4>Escreva uma mensagem</H4>
 
               <TextInput
@@ -216,12 +220,6 @@ function Page(): JSX.Element {
     </LandingPageLayout>
   );
 }
-
-const Anchor = styled.a`
-  position: absolute;
-  top: 0;
-  left: 0;
-`;
 
 const Form = styled.form`
   display: grid;
