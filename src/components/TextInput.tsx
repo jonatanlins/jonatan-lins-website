@@ -1,27 +1,61 @@
+/* eslint-disable no-use-before-define */
 import React from "react";
 import styled, { css } from "styled-components";
 
-export type Ref = HTMLInputElement | HTMLTextAreaElement;
-
-export type Props = React.PropsWithoutRef<JSX.IntrinsicElements["input"]> & {
+export interface Props<T> {
   label?: string;
-  multiline?: boolean;
+  multiline?: T;
   className?: string;
   error?: string;
-};
+}
 
-const Component = React.forwardRef<Ref, Props>((props, ref) => {
-  const { label, multiline, className, error, ...inputProps } = props;
-  const InputComponent: React.ElementType = multiline ? MultilineInput : Input;
+export type InputProps = JSX.IntrinsicElements["input"] & Props<false>;
+export type TextAreaProps = JSX.IntrinsicElements["textarea"] & Props<false>;
+export type Ref = HTMLInputElement | HTMLTextAreaElement;
 
-  return (
-    <Container className={className}>
-      <InputComponent ref={ref} {...inputProps} />
-      <Label>{label}</Label>
-      {error && <Error>{error}</Error>}
-    </Container>
-  );
-});
+const Component = React.forwardRef<Ref, InputProps | TextAreaProps>(
+  function TextInput(props, ref) {
+    const { label, multiline, className, error, ...inputProps } = props;
+    const InputElement: React.ComponentType = multiline
+      ? StyledTextArea
+      : StyledInput;
+
+    return (
+      <Container className={className}>
+        <InputElement ref={ref} {...inputProps} />
+        <Label>{label}</Label>
+        {error && <Error>{error}</Error>}
+      </Container>
+    );
+  }
+);
+
+const inputMixin = css`
+  font-family: DINNextW05-Medium, sans-serif;
+  font-size: 1em;
+  border: none;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  outline: none;
+  padding: 21px 1em 8px;
+  line-height: 1.618;
+  box-sizing: border-box;
+  background-color: ${(props) => props.theme.colors.contrast};
+  color: ${(props) => props.theme.colors.primary};
+  transition: all 0.2s ease;
+  display: block;
+`;
+
+const StyledInput = styled.input`
+  ${inputMixin}
+`;
+
+const StyledTextArea = styled.textarea`
+  ${inputMixin}
+  resize: none;
+  min-height: 112px;
+`;
 
 const Container = styled.label`
   display: block;
@@ -66,33 +100,6 @@ const Label = styled.span`
 
 const Error = styled.p`
   margin: 6px 0 0;
-`;
-
-const inputMixin = css`
-  font-family: DINNextW05-Medium, sans-serif;
-  font-size: 1em;
-  border: none;
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  outline: none;
-  padding: 21px 1em 8px;
-  line-height: 1.618;
-  box-sizing: border-box;
-  background-color: ${(props) => props.theme.colors.contrast};
-  color: ${(props) => props.theme.colors.primary};
-  transition: all 0.2s ease;
-  display: block;
-`;
-
-const Input = styled.input`
-  ${inputMixin}
-`;
-
-const MultilineInput = styled.textarea`
-  ${inputMixin}
-  resize: none;
-  min-height: 112px;
 `;
 
 export default Component;
