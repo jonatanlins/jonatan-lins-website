@@ -1,14 +1,8 @@
-import styled, { css } from "styled-components";
-
-const textMixin = css`
-  color: inherit;
-  font-weight: 400;
-  line-height: 1.618;
-  margin: 0;
-`;
+import styled from "styled-components";
 
 export const H1 = styled.h1`
-  ${textMixin}
+  color: inherit;
+  font-weight: 400;
   font-family: Valorant, arial, georgia, sans-serif;
   font-size: 4em;
   line-height: 1.3;
@@ -24,7 +18,8 @@ export const H1 = styled.h1`
 `;
 
 export const H2 = styled.h2`
-  ${textMixin}
+  color: inherit;
+  font-weight: 400;
   font-family: Valorant, arial, georgia, sans-serif;
   font-size: 1.125em;
   line-height: 1.5;
@@ -36,7 +31,8 @@ export const H2 = styled.h2`
 `;
 
 export const H3 = styled.h3`
-  ${textMixin}
+  color: inherit;
+  font-weight: 400;
   font-family: Tungsten-Bold, arial, georgia, sans-serif;
   font-size: 3.5em;
   line-height: 1.5em;
@@ -53,7 +49,8 @@ export const H3 = styled.h3`
 `;
 
 export const H4 = styled.h4`
-  ${textMixin}
+  color: inherit;
+  font-weight: 400;
   font-family: DINNextW05-Bold, arial, georgia, sans-serif;
   font-size: 2.5em;
   line-height: 1.5;
@@ -61,25 +58,28 @@ export const H4 = styled.h4`
 `;
 
 export const H5 = styled.h5`
-  ${textMixin}
+  color: inherit;
 `;
 
 export const H6 = styled.h6`
-  ${textMixin}
+  color: inherit;
 `;
 
 export const P = styled.p`
-  ${textMixin}
+  color: inherit;
+  font-weight: 400;
   font-family: DINNextW1G, arial, georgia, sans-serif;
   font-size: 1.25em;
   margin: 1em 0;
   opacity: 0.9;
+  line-height: 1.618;
 
   a {
     font-family: DINNextW05-Medium, arial, georgia, sans-serif;
     color: inherit;
     text-decoration: none;
     transition: all 0.2s ease;
+    line-height: inherit;
 
     :hover {
       opacity: 0.6;

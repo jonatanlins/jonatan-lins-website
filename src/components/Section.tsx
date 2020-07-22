@@ -32,6 +32,7 @@ const StyledSection = styled.section<SectionProps>`
   position: relative;
   background-color: ${(props) => props.theme.colors[props.color]};
   color: ${(props) => props.theme.contrastColors[props.color]};
+  overflow-x: hidden;
 
   > * {
     position: relative;
@@ -86,6 +87,7 @@ const StyledSection = styled.section<SectionProps>`
     -webkit-text-stroke-width: 1px;
     z-index: 0;
     user-select: none;
+    pointer-events: none;
   }
 `;
 
