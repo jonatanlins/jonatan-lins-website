@@ -25,7 +25,10 @@ import TextInput from "~/components/TextInput";
 import { P, H1, H2, H3, H4 } from "~/components/Typography";
 
 import logo from "~/assets/images/brand/contrast.svg";
-import destakCaruaruImage01 from "~/assets/images/projects/destak-screenshot-01.jpg?webp";
+import compreNossoImage01 from "~/assets/images/projects/compre-nosso-01.jpg?webp";
+import compreNossoImage02 from "~/assets/images/projects/compre-nosso-02.png?webp";
+import destakImage01 from "~/assets/images/projects/destak-01.jpg?webp";
+import destakImage02 from "~/assets/images/projects/destak-02.jpg?webp";
 
 type ContactFormData = {
   name: string;
@@ -127,10 +130,15 @@ function Page(): JSX.Element {
       <Section id="projects" color="primary" title="My projects">
         <H3>Meus projetos</H3>
 
-        <Row>
-          <div>
-            <DeviceFrame device="galaxyA30" image={destakCaruaruImage01} />
-          </div>
+        <ProjectsGrid>
+          <PositionFrame>
+            <div style={{ marginRight: "30%" }}>
+              <DeviceFrame device="galaxyA30" image={destakImage02} />
+            </div>
+            <div style={{ marginLeft: "30%", marginTop: 40 }}>
+              <DeviceFrame device="galaxyA30" image={destakImage01} />
+            </div>
+          </PositionFrame>
 
           <div>
             <H4>Destak Caruaru</H4>
@@ -148,22 +156,34 @@ function Page(): JSX.Element {
             </Button>
           </div>
 
-          {/* <div>
-            <ImageFrame src="https://via.placeholder.com/400x400/ff4655/ece8e1" />
-          </div>
-
           <div>
             <H4>Compre Nosso</H4>
             <P>
               Uma loja moderna onde empresas de todo o Brasil podem comprar
               diversas peças de vestuário em atacado.
             </P>
+            <Button href="https://comprenosso.com" externalLink target="_blank">
+              Acesse o site
+            </Button>
+          </div>
 
-            <a href="https://comprenosso.com" target="_blank" rel="noopener">
-              <Button>Acesse o site</Button>
-            </a>
-          </div> */}
-        </Row>
+          <PositionFrame>
+            <div style={{ margin: "0 -6%" }}>
+              <DeviceFrame
+                device="macbookAir"
+                image={compreNossoImage02}
+                stroke={3}
+              />
+            </div>
+            <div style={{ margin: "60px 10% 0 55%" }}>
+              <DeviceFrame
+                device="iphoneX"
+                image={compreNossoImage01}
+                stroke={2}
+              />
+            </div>
+          </PositionFrame>
+        </ProjectsGrid>
       </Section>
 
       <Section id="contact" color="contrast" title="Contact">
@@ -221,6 +241,14 @@ function Page(): JSX.Element {
   );
 }
 
+const PositionFrame = styled.div`
+  display: grid;
+
+  & > * {
+    grid-area: 1/1;
+  }
+`;
+
 const Form = styled.form`
   display: grid;
   grid-gap: 1em;
@@ -260,18 +288,14 @@ const ContactGrid = styled.div`
   }
 `;
 
-const Row = styled.div`
+const ProjectsGrid = styled.div`
   display: grid;
   grid-template-columns: auto;
-  grid-gap: 2em 1em;
+  grid-gap: 4em 1em;
 
   @media (min-width: 768px) {
-    grid-template-columns: 300px auto;
-    grid-gap: 3em 1.5em;
-  }
-
-  @media (min-width: 1024px) {
-    grid-template-columns: 370px auto;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 6em 1.5em;
   }
 `;
 

@@ -1,11 +1,10 @@
 import Color from "color";
 import React from "react";
-import styled from "styled-components";
+import styled, { ThemeColor } from "styled-components";
 
-export type Color = "primary" | "secondary" | "accent" | "contrast";
 export type SectionProps = { color: string };
 export type Props = {
-  color: Color;
+  color: ThemeColor;
   title?: string;
   children: React.ReactNode;
   id?: string;

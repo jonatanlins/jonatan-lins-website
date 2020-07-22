@@ -14,3 +14,8 @@ declare module "*.jpg?webp" {
   const value: ImgSrc;
   export = value;
 }
+
+declare module "*.png?webp" {
+  const value: ImgSrc;
+  export = value;
+}
