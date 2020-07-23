@@ -8,6 +8,9 @@
       "packages/*"
     ]
   },
+  "scripts": {
+    "client": "yarn --cwd \"packages/jonatanlins.com\" dev"
+  },
   "repository": "https://github.com/jonatanlins/jonatan-lins-website",
   "author": "Jonatan Lins <contato@jonatanlins.com>",
   "license": "MIT"
