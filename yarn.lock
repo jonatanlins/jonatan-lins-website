@@ -5758,7 +5758,7 @@ debug@^4.0.1, debug@^4.1.0, debug@^4.1.1:
   dependencies:
     ms "^2.1.1"
 
-debuglog@*, debuglog@^1.0.1:
+debuglog@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/debuglog/-/debuglog-1.0.1.tgz#aa24ffb9ac3df9a2351837cfb2d279360cd78492"
   integrity sha1-qiT/uaw9+aI1GDfPstJ5NgzXhJI=
@@ -8571,7 +8571,7 @@ import-lazy@^3.1.0:
   resolved "https://registry.yarnpkg.com/import-lazy/-/import-lazy-3.1.0.tgz#891279202c8a2280fdbd6674dbd8da1a1dfc67cc"
   integrity sha512-8/gvXvX2JMn0F+CDlSC4l6kOmVaLOO3XLkksI7CI3Ud95KDYJuYur2b9P/PUt/i/pDAMd/DulQsNbbbmRRsDIQ==
 
-imurmurhash@*, imurmurhash@^0.1.4:
+imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   integrity sha1-khi5srkoojixPcT7a21XbyMUU+o=
@@ -9928,11 +9928,6 @@ lockfile@^1.0.4:
   dependencies:
     signal-exit "^3.0.2"
 
-lodash._baseindexof@*:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/lodash._baseindexof/-/lodash._baseindexof-3.1.0.tgz#fe52b53a1c6761e42618d654e4a25789ed61822c"
-  integrity sha1-/lK1OhxnYeQmGNZU5KJXie1hgiw=
-
 lodash._baseuniq@~4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash._baseuniq/-/lodash._baseuniq-4.6.0.tgz#0ebb44e456814af7905c6212fa2c9b2d51b841e8"
@@ -9941,32 +9936,10 @@ lodash._baseuniq@~4.6.0:
     lodash._createset "~4.0.0"
     lodash._root "~3.0.0"
 
-lodash._bindcallback@*:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/lodash._bindcallback/-/lodash._bindcallback-3.0.1.tgz#e531c27644cf8b57a99e17ed95b35c748789392e"
-  integrity sha1-5THCdkTPi1epnhftlbNcdIeJOS4=
-
-lodash._cacheindexof@*:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/lodash._cacheindexof/-/lodash._cacheindexof-3.0.2.tgz#3dc69ac82498d2ee5e3ce56091bafd2adc7bde92"
-  integrity sha1-PcaayCSY0u5ePOVgkbr9Ktx73pI=
-
-lodash._createcache@*:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/lodash._createcache/-/lodash._createcache-3.1.2.tgz#56d6a064017625e79ebca6b8018e17440bdcf093"
-  integrity sha1-VtagZAF2JeeevKa4AY4XRAvc8JM=
-  dependencies:
-    lodash._getnative "^3.0.0"
-
 lodash._createset@~4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/lodash._createset/-/lodash._createset-4.0.3.tgz#0f4659fbb09d75194fa9e2b88a6644d363c9fe26"
   integrity sha1-D0ZZ+7CddRlPqeK4imZE02PJ/iY=
-
-lodash._getnative@*, lodash._getnative@^3.0.0:
-  version "3.9.1"
-  resolved "https://registry.yarnpkg.com/lodash._getnative/-/lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5"
-  integrity sha1-VwvH3t5G1hzc3mh9ZdPuy6o6r/U=
 
 lodash._root@~3.0.0:
   version "3.0.1"
@@ -9992,11 +9965,6 @@ lodash.merge@^4.6.0:
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
-
-lodash.restparam@*:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/lodash.restparam/-/lodash.restparam-3.6.1.tgz#936a4e309ef330a7645ed4145986c85ae5b20805"
-  integrity sha1-k2pOMJ7zMKdkXtQUWYbIWuWyCAU=
 
 lodash.sortby@^4.7.0:
   version "4.7.0"
@@ -10736,14 +10704,14 @@ next-compose-plugins@^2.2.0:
   resolved "https://registry.yarnpkg.com/next-compose-plugins/-/next-compose-plugins-2.2.0.tgz#95cd8eb40ab0652070d76572fb648354191628b0"
   integrity sha512-ChUlpT9tWfJ7YxqGw/WQ2T1gf8EeX93n1XqeQw0lkvGa7seszahvF4eOZUJoq7Hetsbzg4UHVnPoCXfXTyQR3g==
 
-next-optimized-images@^3.0.0-canary.0:
-  version "3.0.0-canary.2"
-  resolved "https://registry.yarnpkg.com/next-optimized-images/-/next-optimized-images-3.0.0-canary.2.tgz#c0db09024253c5eb8d563da0447cdccaa3434b4c"
-  integrity sha512-zOGf5emEWC28REI0TukSOU3WRKiATP9+I1KVTdFOzXHqV7z1xeyuv2u/gqc7CASlJ2yW5G9ZmCZHmen363FLLA==
+next-optimized-images@^3.0.0-canary.5:
+  version "3.0.0-canary.5"
+  resolved "https://registry.yarnpkg.com/next-optimized-images/-/next-optimized-images-3.0.0-canary.5.tgz#46c6375dfdd612707a6b55c848e440dc42d23c28"
+  integrity sha512-z9rtEVtdLtNTsdVayhKp2QhKWTzKgdXygps2KiHQUexY+Zj4pRVHa/QOUR0Tm4523EJn2QjeR5AdmNGSdFL9Dg==
   dependencies:
     file-loader "^6.0.0"
     optimized-images-loader "^0.2.4"
-    react-optimized-image "^0.3.0"
+    react-optimized-image "^0.3.3"
 
 next-tick@~1.0.0:
   version "1.0.0"
@@ -13065,10 +13033,10 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-optimized-image@^0.3.0:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/react-optimized-image/-/react-optimized-image-0.3.1.tgz#1f0328f65f98c66757296abda3d7866e6f85813e"
-  integrity sha512-T8fF/VZJ95OV/ixm4slGNx6PaRiDa1Lx3ULecmVfY6jakaFjk+knYM/d2WdtC5qJyT2XWnfREpjN5Ice2AgbYg==
+react-optimized-image@^0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/react-optimized-image/-/react-optimized-image-0.3.3.tgz#0a7bf7f5a38ae701b2f6a4fa965696ccb1aac850"
+  integrity sha512-hj89xSLbF9uCodOqZuIA6GsIt/T55gvI/14auFh+iW+4t/UHFxtDcsbM/tbDXimMZkA4BqpS98/XZTz54HKuyQ==
   dependencies:
     app-root-path "^3.0.0"
     babel-explode-module "^3.0.0"
