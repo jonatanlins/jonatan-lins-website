@@ -2729,17 +2729,6 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@typescript-eslint/experimental-utils@3.7.0":
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-3.7.0.tgz#0ee21f6c48b2b30c63211da23827725078d5169a"
-  integrity sha512-xpfXXAfZqhhqs5RPQBfAFrWDHoNxD5+sVB5A46TF58Bq1hRfVROrWHcQHHUM9aCBdy9+cwATcvCbRg8aIRbaHQ==
-  dependencies:
-    "@types/json-schema" "^7.0.3"
-    "@typescript-eslint/types" "3.7.0"
-    "@typescript-eslint/typescript-estree" "3.7.0"
-    eslint-scope "^5.0.0"
-    eslint-utils "^2.0.0"
-
 "@typescript-eslint/experimental-utils@3.7.1":
   version "3.7.1"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-3.7.1.tgz#ab036caaed4c870d22531d41f9352f3147364d61"
@@ -2755,7 +2744,6 @@
   version "3.7.1"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-3.7.1.tgz#5d9ccecb116d12d9c6073e9861c57c9b1aa88128"
   integrity sha512-W4QV/gXvfIsccN8225784LNOorcm7ch68Fi3V4Wg7gmkWSQRKevO4RrRqWo6N/Z/myK1QAiGgeaXN57m+R/8iQ==
-
   dependencies:
     "@types/eslint-visitor-keys" "^1.0.0"
     "@typescript-eslint/experimental-utils" "3.7.1"
@@ -2763,29 +2751,10 @@
     "@typescript-eslint/typescript-estree" "3.7.1"
     eslint-visitor-keys "^1.1.0"
 
-"@typescript-eslint/types@3.7.0":
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-3.7.0.tgz#09897fab0cb95479c01166b10b2c03c224821077"
-  integrity sha512-reCaK+hyKkKF+itoylAnLzFeNYAEktB0XVfSQvf0gcVgpz1l49Lt6Vo9x4MVCCxiDydA0iLAjTF/ODH0pbfnpg==
-
 "@typescript-eslint/types@3.7.1":
   version "3.7.1"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-3.7.1.tgz#90375606b2fd73c1224fe9e397ee151e28fa1e0c"
   integrity sha512-PZe8twm5Z4b61jt7GAQDor6KiMhgPgf4XmUb9zdrwTbgtC/Sj29gXP1dws9yEn4+aJeyXrjsD9XN7AWFhmnUfg==
-
-"@typescript-eslint/typescript-estree@3.7.0":
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-3.7.0.tgz#66872e6da120caa4b64e6b4ca5c8702afc74738d"
-  integrity sha512-xr5oobkYRebejlACGr1TJ0Z/r0a2/HUf0SXqPvlgUMwiMqOCu/J+/Dr9U3T0IxpE5oLFSkqMx1FE/dKaZ8KsOQ==
-  dependencies:
-    "@typescript-eslint/types" "3.7.0"
-    "@typescript-eslint/visitor-keys" "3.7.0"
-    debug "^4.1.1"
-    glob "^7.1.6"
-    is-glob "^4.0.1"
-    lodash "^4.17.15"
-    semver "^7.3.2"
-    tsutils "^3.17.1"
 
 "@typescript-eslint/typescript-estree@3.7.1":
   version "3.7.1"
@@ -2800,13 +2769,6 @@
     lodash "^4.17.15"
     semver "^7.3.2"
     tsutils "^3.17.1"
-
-"@typescript-eslint/visitor-keys@3.7.0":
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/visitor-keys/-/visitor-keys-3.7.0.tgz#ac0417d382a136e4571a0b0dcfe52088cb628177"
-  integrity sha512-k5PiZdB4vklUpUX4NBncn5RBKty8G3ihTY+hqJsCdMuD0v4jofI5xuqwnVcWxfv6iTm2P/dfEa2wMUnsUY8ODw==
-  dependencies:
-    eslint-visitor-keys "^1.1.0"
 
 "@typescript-eslint/visitor-keys@3.7.1":
   version "3.7.1"
@@ -10767,14 +10729,14 @@ next-compose-plugins@^2.2.0:
   resolved "https://registry.yarnpkg.com/next-compose-plugins/-/next-compose-plugins-2.2.0.tgz#95cd8eb40ab0652070d76572fb648354191628b0"
   integrity sha512-ChUlpT9tWfJ7YxqGw/WQ2T1gf8EeX93n1XqeQw0lkvGa7seszahvF4eOZUJoq7Hetsbzg4UHVnPoCXfXTyQR3g==
 
-next-optimized-images@^3.0.0-canary.5:
-  version "3.0.0-canary.5"
-  resolved "https://registry.yarnpkg.com/next-optimized-images/-/next-optimized-images-3.0.0-canary.5.tgz#46c6375dfdd612707a6b55c848e440dc42d23c28"
-  integrity sha512-z9rtEVtdLtNTsdVayhKp2QhKWTzKgdXygps2KiHQUexY+Zj4pRVHa/QOUR0Tm4523EJn2QjeR5AdmNGSdFL9Dg==
+next-optimized-images@^3.0.0-canary.6:
+  version "3.0.0-canary.6"
+  resolved "https://registry.yarnpkg.com/next-optimized-images/-/next-optimized-images-3.0.0-canary.6.tgz#d374cf0a5fe978a92685ca4c1e334793e3e0c5cb"
+  integrity sha512-7ydmfIdAndGjd/1X69rG1ItFK3jxyK2jTMvhCqETuo3xnpwcEdy7su+7XxNa+VSvPCAsCy4Mf7SNqHxxhG6j2g==
   dependencies:
     file-loader "^6.0.0"
-    optimized-images-loader "^0.2.4"
-    react-optimized-image "^0.3.3"
+    optimized-images-loader "^0.2.6"
+    react-optimized-image "^0.3.4"
 
 next-tick@~1.0.0:
   version "1.0.0"
@@ -11489,10 +11451,10 @@ opener@^1.5.1:
   resolved "https://registry.yarnpkg.com/opener/-/opener-1.5.1.tgz#6d2f0e77f1a0af0032aca716c2c1fbb8e7e8abed"
   integrity sha512-goYSy5c2UXE4Ra1xixabeVh1guIX/ZV/YokJksb6q2lubWu6UbvPQ20p542/sFIll1nl8JnCyK9oBaOcCWXwvA==
 
-optimized-images-loader@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/optimized-images-loader/-/optimized-images-loader-0.2.4.tgz#20862b94277d4f8d6b5ab8b269c0896c0974e615"
-  integrity sha512-wFRjfm8c8foFHlr5E3VEweOfLajg0Qj44GTndi9Jc9l8+dMG1XiawG5UBHUh+cm4CAcb8eVzQ9TOpGHhD5bzBw==
+optimized-images-loader@^0.2.6:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/optimized-images-loader/-/optimized-images-loader-0.2.6.tgz#0c8cd207cb6bc673e2e79649a75991e234da9503"
+  integrity sha512-uUHUP7uyCiTyNs/8iPQunkMVeb6aVQ/+aLmBd7P6kMi1ylHRu7DxB5PqSzcSDUyf6p/KvqsAfcC9chDy3O5ctQ==
   dependencies:
     "@wasm-codecs/mozjpeg" "^1.0.0"
     "@wasm-codecs/oxipng" "^1.0.0"
@@ -13087,10 +13049,10 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-optimized-image@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/react-optimized-image/-/react-optimized-image-0.3.3.tgz#0a7bf7f5a38ae701b2f6a4fa965696ccb1aac850"
-  integrity sha512-hj89xSLbF9uCodOqZuIA6GsIt/T55gvI/14auFh+iW+4t/UHFxtDcsbM/tbDXimMZkA4BqpS98/XZTz54HKuyQ==
+react-optimized-image@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/react-optimized-image/-/react-optimized-image-0.3.4.tgz#ea53606bd2d654e51117427090f521291d3fcd63"
+  integrity sha512-GtIoAimeq149m1BfYbHj7OdW30/JVQvLFWWJgDr3Q2ZVypEblq1CQe34RXvMATtruxL273euZKXAqCKKqdcN4A==
   dependencies:
     app-root-path "^3.0.0"
     babel-explode-module "^3.0.0"
