@@ -54,7 +54,7 @@
     "webp-loader": "^0.6.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.4",
+    "@babel/core": "^7.11.0",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/react": "^5.3.19",
     "@typescript-eslint/eslint-plugin": "^3.7.1",
