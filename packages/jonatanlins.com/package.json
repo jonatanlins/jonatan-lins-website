@@ -47,7 +47,7 @@
     "react-dom": "16.13.1",
     "react-hook-form": "^6.3.3",
     "react-icons": "^3.10.0",
-    "responsive-loader": "^2.0.1",
+    "responsive-loader": "^2.0.2",
     "styled-components": "^5.1.1",
     "svg-sprite-loader": "^5.0.0",
     "typescript": "^3.9.7",
