@@ -55,7 +55,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
-    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-actions": "^6.1.10",
     "@storybook/react": "^5.3.19",
     "@typescript-eslint/eslint-plugin": "^3.9.0",
     "@typescript-eslint/parser": "^3.7.1",
