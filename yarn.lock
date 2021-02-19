@@ -12811,10 +12811,10 @@ react-helmet-async@^1.0.2:
     react-fast-compare "^3.0.1"
     shallowequal "^1.1.0"
 
-react-hook-form@^6.3.3:
-  version "6.3.3"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-6.3.3.tgz#232433fd830758d3050d5d33f66928d20cca0e3d"
-  integrity sha512-DoE97xHjRig50n5nkyqN+70t7Rp3igaBxgr845lQd6OhN3cGC0DlusV2A/sFF7x8enT/2Q5dYiPeipCxtaqgVQ==
+react-hook-form@^6.15.2:
+  version "6.15.2"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-6.15.2.tgz#3dd4eecfb6ebc261d4372df57d166c6bf893d246"
+  integrity sha512-2yAn+vjYaM1jDqhsZdL9964wyNUZhVWC+epEYh4f3sUKaDYxmewp1fqQyF1kaIjuaQWG3OMoM81RkXeHCsQvig==
 
 react-hotkeys@2.0.0:
   version "2.0.0"
