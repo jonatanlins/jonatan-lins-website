@@ -113,17 +113,15 @@ function Page(): JSX.Element {
 
         <P>
           Desenvolvedor de sites e aplicativos, metido a designer de interfaces,
-          amante de tecnologia, estudante de Sistemas de Informação na{" "}
-          <a href="http://caruaru.upe.br">UPE</a>, jogador amador de GTA e
-          somelier de biscoitos.
+          amante de tecnologia e estudante de Sistemas de Informação na{" "}
+          <a href="http://caruaru.upe.br">UPE</a>.
         </P>
         <P>
-          Atualmente ocupo o cargo de Engenheiro de Software no{" "}
-          <a href="https://www.instagram.com/smart_research_labs">SmartLabs</a>,
-          sou responsável pelos front-ends de diversos projetos desenvolvidos
-          para o{" "}
-          <a href="https://www.shoppingdifusora.com.br">Shopping Difusora</a> e
-          para a <a href="https://caruaru.pe.gov.br">Prefeitura de Caruaru</a>.
+          Atualmente ocupo o cargo de Desenvolvedor de Software na{" "}
+          <a href="https://compassouol.com">Compasso UOL</a>,
+          sou responsável pelo front-end de projetos desenvolvidos
+          para as{" "}
+          <a href="https://www.camicado.com.br">Lojas Camicado</a>.
         </P>
       </Section>
 
