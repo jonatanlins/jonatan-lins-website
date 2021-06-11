@@ -31,7 +31,7 @@ const StyledSection = styled.section<SectionProps>`
   position: relative;
   background-color: ${(props) => props.theme.colors[props.color]};
   color: ${(props) => props.theme.contrastColors[props.color]};
-  overflow-x: hidden;
+  overflow: hidden;
 
   > * {
     position: relative;
