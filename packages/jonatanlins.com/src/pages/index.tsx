@@ -118,9 +118,8 @@ function Page(): JSX.Element {
         </P>
         <P>
           Atualmente ocupo o cargo de Desenvolvedor de Software na{" "}
-          <a href="https://compassouol.com">Compasso UOL</a>,
-          sou responsável pelo front-end de projetos desenvolvidos
-          para as{" "}
+          <a href="https://compassouol.com">Compasso UOL</a>, sou responsável
+          pelo front-end de projetos desenvolvidos para as{" "}
           <a href="https://www.camicado.com.br">Lojas Camicado</a>.
         </P>
       </Section>
@@ -302,7 +301,9 @@ const FirstSection = styled(Section)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
+  min-height: calc(100vh - 80px);
 `;
 
 export default withTheme(Page);
