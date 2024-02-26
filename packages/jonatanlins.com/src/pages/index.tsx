@@ -112,15 +112,15 @@ function Page(): JSX.Element {
         <H3>Sobre mim</H3>
 
         <P>
-          Desenvolvedor de sites e aplicativos, metido a designer de interfaces,
-          amante de tecnologia e estudante de Sistemas de Informação na{" "}
-          <a href="http://caruaru.upe.br">UPE</a>.
+          Engenheiro de Software e UI/UX designer,
+          amante da tecnologia e bacharel em Sistemas de Informação na{" "}
+          <a href="http://caruaru.upe.br" target="_blank"
+                rel="noopener noreferrer">UPE</a>.
         </P>
         <P>
-          Atualmente ocupo o cargo de Desenvolvedor de Software na{" "}
-          <a href="https://compassouol.com">Compasso UOL</a>, sou responsável
-          pelo front-end de projetos desenvolvidos para as{" "}
-          <a href="https://www.camicado.com.br">Lojas Camicado</a>.
+          Atualmente trabalho na Heavow Tech Studio e presto serviço para a <a href="https://www.questrade.com/" target="_blank"
+                rel="noopener noreferrer">Questrade Financial Group</a>, sou responsável por manutenção do site <a href="https://www.zolo.ca/" target="_blank"
+                rel="noopener noreferrer">Zolo</a>.
         </P>
       </Section>
 
