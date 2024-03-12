@@ -1,5 +1,4 @@
 import React from "react";
-import { useForm } from "react-hook-form";
 import {
   FaInstagram,
   FaWhatsapp,
@@ -10,7 +9,6 @@ import {
 import styled, { withTheme } from "styled-components";
 
 import LandingPageLayout from "~/layouts/LandingPage";
-import api from "~/services/api";
 
 import Button from "~/components/Button";
 import ButtonGroup, {
@@ -25,10 +23,10 @@ import TextInput from "~/components/TextInput";
 import { P, H1, H2, H3, H4 } from "~/components/Typography";
 
 import logo from "~/assets/images/brand/contrast.svg";
-import compreNossoImage01 from "~/assets/images/projects/compre-nosso-01.jpg?webp";
-import compreNossoImage02 from "~/assets/images/projects/compre-nosso-02.png?webp";
-import destakImage01 from "~/assets/images/projects/destak-01.jpg?webp";
-import destakImage02 from "~/assets/images/projects/destak-02.jpg?webp";
+import compreNossoImage01 from "~/assets/images/projects/compre-nosso-01.jpg";
+import compreNossoImage02 from "~/assets/images/projects/compre-nosso-02.png";
+import destakImage01 from "~/assets/images/projects/destak-01.jpg";
+import destakImage02 from "~/assets/images/projects/destak-02.jpg";
 
 type ContactFormData = {
   name: string;
@@ -59,8 +57,7 @@ const socialMediaButtons: ButtonGroupProps["buttons"] = [
   {
     icon: FaWhatsapp,
     label: "WhatsApp",
-    url:
-      "https://api.whatsapp.com/send?phone=5581982224966&text=Ol%C3%A1,%20Jonatan,%20tudo%20bem?",
+    url: "https://api.whatsapp.com/send?phone=5581982224966&text=Ol%C3%A1,%20Jonatan,%20tudo%20bem?",
     target: "_blank",
   },
   {
@@ -78,13 +75,15 @@ const socialMediaButtons: ButtonGroupProps["buttons"] = [
 ];
 
 function Page(): JSX.Element {
-  const { register, handleSubmit, errors } = useForm<ContactFormData>();
+  // const { register, handleSubmit } = useForm<ContactFormData>();
 
-  function handleContactSubmit(data: ContactFormData) {
-    api.post(`contacts`, data).then(() => {
-      // eslint-disable-next-line no-alert
-      alert("Mensagem enviada com sucesso! Farei contato em breve.");
-    });
+  function handleContactSubmit() {
+    // api.post(`contacts`, data).then(() => {
+    //   // eslint-disable-next-line no-alert
+    //   alert("Mensagem enviada com sucesso! Farei contato em breve.");
+    // });
+    alert("Mensagem enviada com sucesso! Farei contato em breve.");
+
   }
 
   function goToContactSection() {
@@ -112,15 +111,35 @@ function Page(): JSX.Element {
         <H3>Sobre mim</H3>
 
         <P>
-          Engenheiro de Software e UI/UX designer,
-          amante da tecnologia e bacharel em Sistemas de Informação na{" "}
-          <a href="http://caruaru.upe.br" target="_blank"
-                rel="noopener noreferrer">UPE</a>.
+          Engenheiro de Software e UI/UX designer, amante da tecnologia e
+          bacharel em Sistemas de Informação na{" "}
+          <a
+            href="http://caruaru.upe.br"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            UPE
+          </a>
+          .
         </P>
         <P>
-          Atualmente trabalho na Heavow Tech Studio e presto serviço para a <a href="https://www.questrade.com/" target="_blank"
-                rel="noopener noreferrer">Questrade Financial Group</a>, sou responsável por manutenção do site <a href="https://www.zolo.ca/" target="_blank"
-                rel="noopener noreferrer">Zolo</a>.
+          Atualmente trabalho na Heavow Tech Studio e presto serviço para a{" "}
+          <a
+            href="https://www.questrade.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Questrade Financial Group
+          </a>
+          , sou responsável por manutenção do site{" "}
+          <a
+            href="https://www.zolo.ca/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Zolo
+          </a>
+          .
         </P>
       </Section>
 
@@ -192,28 +211,28 @@ function Page(): JSX.Element {
           <Card>
             <Form
               className="contact-form"
-              onSubmit={handleSubmit(handleContactSubmit)}
+              onSubmit={()=>handleContactSubmit()}
             >
               <H4>Escreva uma mensagem</H4>
 
               <TextInput
                 name="name"
                 label="Seu nome"
-                ref={register({ required: true })}
-                error={errors.name && "Preencha este campo"}
+                // ref={register({ required: true })}
+                // error={errors.name && "Preencha este campo"}
               />
               <TextInput
                 name="contact"
                 label="Seu telefone ou email"
-                ref={register({ required: true })}
-                error={errors.contact && "Preencha este campo"}
+                // ref={register({ required: true })}
+                // error={errors.contact && "Preencha este campo"}
               />
               <TextInput
                 name="message"
                 label="Sua mensagem"
                 multiline
-                ref={register({ required: true })}
-                error={errors.message && "Preencha este campo"}
+                // ref={register({ required: true })}
+                // error={errors.message && "Preencha este campo"}
               />
 
               <Button className="center">Entre em contato</Button>

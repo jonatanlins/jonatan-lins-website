@@ -1,5 +1,9 @@
 import React from "react";
-import { withTheme, Theme, ThemeColor } from "styled-components";
+import {
+  withTheme,
+  Theme,
+  ThemeColor, 
+} from "styled-components";
 
 export type ImgType = string | { toString(): string; src: string };
 export type DeviceType = "iphoneX" | "galaxyA30" | "macbookAir";
@@ -176,4 +180,4 @@ DeviceFrame.defaultProps = {
   stroke: 1,
 };
 
-export default withTheme(DeviceFrame);
+export default withTheme(DeviceFrame) as any;
